@@ -1,22 +1,22 @@
 import { useNavigate } from "react-router-dom";
+import * as m from "../styles/mainStyle";
+
 
 function KioskMain() {
   const navigate = useNavigate();
   const moveToMenu = () => navigate("/menu");
   
   return (
-    <div className="relative h-screen w-screen">
-      <div className="flex h-[300px] w-full bg-red-300 justify-around items-center absolute bottom-[50px]">
+    <m.KioskMainContainer>
+      <m.startBtnContainer >
         <button 
-          className="w-[477px] h-[274px] text-[60px] rounded-[30px] bg-blue1 text-white "
           onClick={moveToMenu}
         >매장 식사</button>
         <button 
-          className="w-[477px] h-[274px] text-[60px] rounded-[30px] bg-blue1 text-white"
           onClick={moveToMenu}
         >포장 주문</button>
-      </div>
-    </div>
+      </m.startBtnContainer>
+    </m.KioskMainContainer>
   )
 }
 export default KioskMain;  

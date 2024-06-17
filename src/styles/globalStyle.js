@@ -46,7 +46,7 @@ const GlobalStyle = createGlobalStyle`
   box-sizing : border-box;
 
 }
-@media (min-width: 1180px) {
+@media (min-width: 800px) {
   html {
     font-size : 62.5% // 1rem = 10px
   }
