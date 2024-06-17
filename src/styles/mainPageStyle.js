@@ -32,12 +32,12 @@ export const languageBox = styled.div`
   margin : 1rem 0 0 0;
 
   button {
-    width : 9rem;
-    height : 2.5rem;
+    width : 11.5rem;
+    height : 3.5rem;
     color : ${props => props.theme.colors.colorBg};
     background-color :  ${props => props.theme.colors.gray2};
-    font-size : 1.5rem;
-    margin : 0 1rem;
+    font-size : 1.9rem;
+    margin : 0 0.5rem;
     border : none;
     border-radius : 5rem;
     &.ko{    

@@ -11,6 +11,8 @@ export const MenuSelectContainer = styled.div`
     align-items : center;
     padding : 1.5rem;
     background-color : ${props => props.theme.colors.gray1};
+    box-shadow : 0 -35px 50px -10px rgba(0, 0, 0, 0.2);
+
   }
 `
 
@@ -21,12 +23,12 @@ export const TopCategoryBox = styled.div`
   display : flex;
   align-items: end;
   justify-content : space-around;
-  box-shadow : 0 35px 50px -20px rgba(0, 0, 0, 0.1);
+  box-shadow : 0 35px 40px -10px rgba(0, 0, 0, 0.1);
 
   button {
-    height : 4rem;
+    height : 4.5rem;
     width :  15rem;
-    font-size : 2rem;
+    font-size : 2.5rem;
     font-family : 'Pretendard-SemiBold';
     background-color : ${props => props.theme.colors.colorBg};
     border : none;
@@ -45,9 +47,9 @@ export const SubCategoryBox = styled.div`
   justify-content : space-around;
   
   button {
-    height : 3rem;
+    height : 3.5rem;
     width :  12rem;
-    font-size : 1.8rem;
+    font-size : 2rem;
     font-family : 'Pretendard-SemiBold';
     border : none;
     background-color:transparent;
@@ -62,7 +64,7 @@ export const SubCategoryBox = styled.div`
 // 전체 메뉴 보여주기 레이아웃
 export const MenuItemContainer = styled.div`
   width : 100%;
-  height : 38rem;
+  height : 102rem;
   display : grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   place-items: center;
@@ -87,42 +89,40 @@ export const MenuItemBox = styled.div`
     border-radius : 1rem;
   }
   h1 {
-    margin-top : 0.5rem;
+    margin : 0.5rem 0;
     font-size : 2rem;
     font-family : 'Pretendard-SemiBold';
-    }
-    p {
-      font-size : 1.6rem;
-      font-family : 'Pretendard-SemiBold';
+  }
+  p {
+    font-size : 1.6rem;
+    font-family : 'Pretendard-SemiBold';
   }
 `
 
 // 작은 장바구니 UI
 export const SmallShoppingBag = styled.div`
-  width : 48rem;
-  height : 25rem;
+  width : 70rem;
+  height : 27rem;
   border-radius : 1rem;
   background-color : ${props => props.theme.colors.colorBg};
-
-  
 `
 
 // 현재 장바구니 현황
 export const CurrentBagContainer = styled.div`
-  width : 28rem;  
-  height : 25rem;
+  width : 32rem;  
+  height : 27rem;
   display : flex;
   flex-direction : column;
   justify-content : space-between;
 
   h3 {
-    font-size : 1.9rem;
+    font-size : 2.1rem;
+    font-family : 'Pretendard-Regular';
     text-align: right;
-    font-family : 'Pretendard-Medium';
   }
   p {
     display : inline-block;
-    width : 11rem;
+    width : 13rem;
     text-align : center;
     font-size : 2rem;
     font-family : 'Pretendard-SemiBold';
@@ -135,23 +135,123 @@ export const CurrentBagContainer = styled.div`
     } 
   }
   button {
-    width : 26rem;
+    width : 32rem;
     color : ${props => props.theme.colors.colorBg};
     border : none;
     border-radius : 1rem;
     &.payBtn {
       height : 11rem;
       background-color : ${props => props.theme.colors.blue1};
-      font-size : 2.7rem;
+      font-size : 3rem;
       font-family : 'Pretendard-Bold';
+      letter-spacing : 0.2rem;
       }
       &.backBtn {
         height : 7rem;
-        font-size : 2rem;
+        font-size : 2.2rem;
         background-color : ${props => props.theme.colors.gray6};
         font-family : 'Pretendard-SemiBold';
         color : ${props => props.theme.colors.colorMain};
     }
   }
 
+`
+
+// 모달을 위한 레이아웃
+export const ModalBackgroundContainer = styled.div`
+  position: absolute;
+  width : 100%;
+  height : 100%;
+  z-index: 50;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(0.2rem);
+`
+
+
+// 메뉴 최종 확인 모달 
+export const MenuCheckContainer = styled.div`
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 1);
+  width: 86rem;
+  height: 130rem;
+  padding : 2.6rem;
+  border-radius : 2rem;
+  display : grid;
+  grid-template-rows: 10rem 0.1rem 85rem 5rem 0.1rem 8rem 15rem;
+  h1 {
+    margin : 4rem 0 2.5rem 0;
+    font-size : 2.8rem;
+    font-family : 'Pretendard-SemiBold';
+    letter-spacing : 0.1rem;
+    &.colored {
+      margin : 0 0 1rem 0;
+      color: ${props => props.theme.colors.blue2}
+    }
+  }
+  hr{border: 0.1rem solid ${props => props.theme.colors.blue0}}
+  .infoContainer {
+    display : flex;
+    align-items : center;
+    justify-content : space-between;
+    font-family : 'Pretendard-SemiBold';
+    font-size : 2.5rem;
+    .menuCount {
+      display : flex;      
+      width : 26rem;
+      justify-content:space-between;
+      p{
+        width : 10rem;
+        text-align : center;
+        background-color: ${props => props.theme.colors.blue1};
+        color: ${props => props.theme.colors.colorBg};
+        border-radius : 1rem;
+      }
+    }
+    .totalPrice {
+      display : flex;
+      width : 40rem;
+      justify-content:space-between;
+      p{
+        width : 25rem;
+        text-align : right;
+        color: ${props => props.theme.colors.blue1}
+      }
+    }
+  }
+  .btnContainer {
+    display : flex;
+    align-items : center;
+    justify-content : space-between;
+    align-items: center;
+    button {
+      font-family : 'Pretendard-Bold';
+      font-size : 3.8rem;
+      height : 100%;
+      border : none;
+      border-radius : 1rem;
+      &.cancel{
+        width : 13rem;
+        background-color : ${props => props.theme.colors.gray1}
+        cursor : pointer;
+      }
+      &.here{
+        width : 32rem;
+        background-color : ${props => props.theme.colors.blue1};
+        color : ${props => props.theme.colors.colorBg};
+        cursor : pointer;
+      }
+      &.togo{
+        width : 32rem;
+        background-color : ${props => props.theme.colors.blue0};
+        cursor : pointer;
+      }
+    }
+  }
 `
