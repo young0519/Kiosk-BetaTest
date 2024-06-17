@@ -1,10 +1,10 @@
-import * as m from "../../styles/menuPageStyle";
+import * as md from "../../styles/modalStyle";
 
 
 function MenuCheckModal({ setIsCheckMenuModal }) {
 
     return (
-      <m.MenuCheckContainer>
+      <md.MenuCheckContainer>
         <h1>주문 내역을 다시 한번 확인하여 주세요.</h1>
         <hr/>
         <div>
@@ -42,7 +42,7 @@ function MenuCheckModal({ setIsCheckMenuModal }) {
             포장 주문
           </button>
         </div>
-      </m.MenuCheckContainer>
+      </md.MenuCheckContainer>
     )
   }
 export default MenuCheckModal;

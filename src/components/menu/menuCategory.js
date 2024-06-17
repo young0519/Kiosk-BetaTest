@@ -1,7 +1,7 @@
 import MenuItem from "./menuItem";
 import * as m from "../../styles/menuPageStyle"
 
-function MenuCategory() {
+function MenuCategory({setIsDetailMenuModal}) {
     return (
       <div style={{ width: '100%' }}>
         {/* 메뉴 선택 */}
@@ -21,7 +21,7 @@ function MenuCategory() {
         </m.SubCategoryBox>
         {/* 상세 메뉴 종류 */}
         <m.MenuItemContainer>
-          <MenuItem/>
+          <MenuItem setIsDetailMenuModal={setIsDetailMenuModal}/>
           <MenuItem/>
           <MenuItem/>
           <MenuItem/>

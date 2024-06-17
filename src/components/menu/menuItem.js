@@ -2,11 +2,13 @@ import gray_color_bg from '../../assets/imgs/gray_color_bg.png'
 import * as m from "../../styles/menuPageStyle"
 
 
-function MenuItem() {
+function MenuItem({setIsDetailMenuModal}) {
 
 
   return (
-    <m.MenuItemBox >
+    <m.MenuItemBox 
+      onClick={() => {setIsDetailMenuModal(true)}}
+    >
       <img 
         src={gray_color_bg} 
         alt="임시 사진"

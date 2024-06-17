@@ -2,6 +2,8 @@ import ShoppingBag from "../components/shoppingBag";
 import MenuCategory from "../components/menu/menuCategory";
 import LanguageSelect from "../components/languageSelect";
 import * as m from "../styles/menuPageStyle";
+import * as md from "../styles/modalStyle";
+import DetailMenuModal from "../components/menu/detailMenuModal";
 import MenuCheckModal from "../components/menu/menuCheckModal";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -11,18 +13,25 @@ function MenuSelect() {
   const navigate = useNavigate();
 
   const [isCheckMenuModal, setIsCheckMenuModal] = useState(false);
+  const [isDetailMenuModal, setIsDetailMenuModal] = useState(false);
 
   return (
       <div>
         {
+          isDetailMenuModal &&
+          <md.ModalBackgroundContainer>
+            <DetailMenuModal setIsDetailMenuModal={setIsDetailMenuModal}/>
+          </md.ModalBackgroundContainer>
+        }
+        {
           isCheckMenuModal &&
-          <m.ModalBackgroundContainer>
+          <md.ModalBackgroundContainer>
             <MenuCheckModal setIsCheckMenuModal={setIsCheckMenuModal}/>
-          </m.ModalBackgroundContainer>
+          </md.ModalBackgroundContainer>
         }
         <m.MenuSelectContainer>
           <LanguageSelect/>
-          <MenuCategory/>
+          <MenuCategory setIsDetailMenuModal={setIsDetailMenuModal}/>
           <div className="go_to_credit">
               <ShoppingBag/>
               <m.CurrentBagContainer>
