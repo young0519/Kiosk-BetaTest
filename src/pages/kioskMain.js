@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import * as m from "../styles/mainStyle";
+import * as m from "../styles/mainPageStyle";
 
 
 function KioskMain() {

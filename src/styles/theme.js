@@ -1,10 +1,9 @@
 export const theme = {
   colors : {
-    colorBg: '#ffffff',
+    colorBg: '#FDFDFD',
     colorMain: '#000000',
     black : '#08162B',
     modalBlack : 'rgba(9, 9, 9, 0.7)',
-    white : '#FDFDFD',
     blue0 : '#BAD6FF',
     blue1 : '#2C81FF',
     blue2 : '#1758B9',

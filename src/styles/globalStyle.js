@@ -1,43 +1,51 @@
 import {createGlobalStyle} from "styled-components";
-
+import Pretendard_Black from "../assets/fonts/Pretendard-Black.woff"
+import Pretendard_Bold from "../assets/fonts/Pretendard-Bold.woff"
+import Pretendard_ExtraBold from "../assets/fonts/Pretendard-ExtraBold.woff"
+import Pretendard_ExtraLight from "../assets/fonts/Pretendard-ExtraLight.woff"
+import Pretendard_Light from "../assets/fonts/Pretendard-Light.woff"
+import Pretendard_Medium from "../assets/fonts/Pretendard-Medium.woff"
+import Pretendard_Regular from "../assets/fonts/Pretendard-Regular.woff"
+import Pretendard_SemiBold from "../assets/fonts/Pretendard-SemiBold.woff"
+import Pretendard_Thin from "../assets/fonts/Pretendard-Thin.woff"
 
 const GlobalStyle = createGlobalStyle`
 
 @font-face {
     font-family: 'Pretendard-Black';
-    src: url('../src/assets/fonts/Pretendard-Black.woff') format('woff');
+    src: url(${Pretendard_Black}) format('woff');
 }   
 @font-face {
     font-family: 'Pretendard-Bold';
-    src: url('../src/assets/fonts/Pretendard-Bold.woff') format('woff');
+    src: url(${Pretendard_Bold}) format('woff');
 }
 @font-face {
     font-family: 'Pretendard-ExtraBold';
-    src: url('../src/assets/fonts/Pretendard-ExtraBold.woff') format('woff');
+    src: url(${Pretendard_ExtraBold}) format('woff');
 }
 @font-face {
     font-family: 'Pretendard-ExtraLight';
-    src: url('../src/assets/fonts/Pretendard-ExtraLight.woff') format('woff');
+    src: url(${Pretendard_ExtraLight}) format('woff');
 }
 @font-face {
     font-family: 'Pretendard-Light';
-    src: url('../src/assets/fonts/Pretendard-Light.woff') format('woff');
+    src: url(${Pretendard_Light}) format('woff');
 }
 @font-face {
     font-family: 'Pretendard-Medium';
-    src: url('../src/assets/fonts/Pretendard-Medium.woff') format('woff');
+    src: url(${Pretendard_Medium}) format('woff');
 }
 @font-face {
     font-family: 'Pretendard-Regular';
-    src: url('../src/assets/fonts/Pretendard-Regular.woff') format('woff');
+    src: url(${Pretendard_Regular}) format('woff');
 }
 @font-face {
     font-family: 'Pretendard-SemiBold';
-    src: url('../src/assets/fonts/Pretendard-SemiBold.woff') format('woff');
+    src: url(${Pretendard_SemiBold}) format('woff');
 }
 @font-face {
     font-family: 'Pretendard-Thin';
-    src: url('../src/assets/fonts/Pretendard-Thin.woff') format('woff');
+    src: url(${Pretendard_Thin}) format('woff');
 }
 
 *, *::before, *::after {
