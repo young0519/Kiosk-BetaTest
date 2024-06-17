@@ -1,0 +1,59 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@font-face {
+    font-family: 'Pretendard-Black';
+    src: url('../src/assets/fonts/Pretendard-Black.woff') format('woff');
+}   
+@font-face {
+    font-family: 'Pretendard-Bold';
+    src: url('../src/assets/fonts/Pretendard-Bold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Pretendard-ExtraBold';
+    src: url('../src/assets/fonts/Pretendard-ExtraBold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Pretendard-ExtraLight';
+    src: url('../src/assets/fonts/Pretendard-ExtraLight.woff') format('woff');
+}
+@font-face {
+    font-family: 'Pretendard-Light';
+    src: url('../src/assets/fonts/Pretendard-Light.woff') format('woff');
+}
+@font-face {
+    font-family: 'Pretendard-Medium';
+    src: url('../src/assets/fonts/Pretendard-Medium.woff') format('woff');
+}
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('../src/assets/fonts/Pretendard-Regular.woff') format('woff');
+}
+@font-face {
+    font-family: 'Pretendard-SemiBold';
+    src: url('../src/assets/fonts/Pretendard-SemiBold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Pretendard-Thin';
+    src: url('../src/assets/fonts/Pretendard-Thin.woff') format('woff');
+}
+    
+html {
+	font-family: 'Pretendard-Regular';
+}
+
+@layer components {
+    .topCategoryBtn {
+        @apply h-[80px] w-[170px] text-[30px] font-Pretendard-SemiBold;
+    }
+    .topCategoryBtn:focus{
+        @apply h-[80px] w-[170px] text-[30px] font-Pretendard-SemiBold border-solid border-b-[5px] border-b-blue1;
+    }
+    .subCategoryBtn {
+        @apply h-[45px] w-[170px] text-[25px] font-Pretendard-SemiBold text-blue1;
+    }
+    .subCategoryBtn:focus {
+        @apply h-[45px] w-[170px] text-[25px] font-Pretendard-SemiBold bg-blue1 text-white rounded-full;
+    }
+}
