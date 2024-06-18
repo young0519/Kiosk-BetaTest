@@ -1,7 +1,20 @@
 import styled from "styled-components"
 
-// 모달을 위한 레이아웃
+// 맨 밑의 모달을 위한 레이아웃
 export const ModalBackgroundContainer = styled.div`
+  position: absolute;
+  width : 100%;
+  height : 100%;
+  z-index: 20;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(0.2rem);
+`
+
+// 상 단의 모달을 위한 레이아웃
+export const ModalTopBackgroundContainer = styled.div`
   position: absolute;
   width : 100%;
   height : 100%;
@@ -10,12 +23,12 @@ export const ModalBackgroundContainer = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(0.2rem);
 `
+
 // 메뉴 세부사항 모달
 export const DetailMenuContainer = styled.div`
   position: absolute;
-  z-index: 100;
+  z-index: 30;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -158,11 +171,100 @@ export const DetailMenuContainer = styled.div`
   }
 `
 
+// 음료 제조 방식 모달 
+export const DetailOptionContainer = styled.div`
+  position: absolute;
+  z-index: 80;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 1);
+  width: 86rem;
+  height: 80rem;
+  padding : 2.6rem 3rem;
+  border-radius : 2rem;
+  display : flex;
+  flex-direction : column;
+  justify-content : space-between;
+  h1 {
+    font-family : 'Pretendard-SemiBold';
+    font-size : 2.8rem;
+  }
+  .shot-option {
+    width : 20rem;
+    height : 20rem;
+    display : flex;
+    flex-direction : column;
+    justify-content : center;
+    align-items : center;
+    margin : 0 2rem 0 0;
+    border-radius : 2rem;
+    background-color : ${props => props.theme.colors.gray1};
+    img{
+      height : 7.7rem;
+    }
+    h1 {
+      font-family : 'Pretendard-SemiBold';
+      font-size : 3rem;
+      margin : 1.8rem 0 0.6rem 0;
+    }
+    h3 {
+      font-family : 'Pretendard-SemiBold';
+      font-size : 2.6rem;
+      color : ${props => props.theme.colors.blue1}
+    }
+  }
+  .syrup-option {
+    width : 20rem;
+    height : 20rem;
+    display : flex;
+    flex-direction : column;
+    justify-content : center;
+    align-items : center;
+    margin : 0 2rem 0 0;
+    border-radius : 2rem;
+    background-color : ${props => props.theme.colors.gray1};
+
+    img{
+      width : 18rem;
+      height : 10rem;
+      border-radius : 1rem;
+    }
+    h1 {
+      font-family : 'Pretendard-SemiBold';
+      font-size : 2.1rem;
+      margin : 1.8rem 0 0.6rem 0;
+    }
+    h3 {
+      font-family : 'Pretendard-SemiBold';
+      font-size : 2.4srem;
+      color : ${props => props.theme.colors.blue1}
+    }
+  }
+  .btnBox {
+    display : flex;
+    align-items : center;
+    justify-content : space-between;
+    button {
+      width : 39rem;
+      height : 8rem;
+      border : none;
+      border-radius : 1rem;
+      font-size : 3rem;
+      font-family : 'Pretendard-Bold';
+      background-color : ${props => props.theme.colors.gray1};
+      &.addOption {
+        background-color : ${props => props.theme.colors.blue1};
+        color : ${props => props.theme.colors.colorBg};        
+      }
+    }
+  }
+`
 
 // 메뉴 최종 확인 모달 
 export const MenuCheckContainer = styled.div`
   position: absolute;
-  z-index: 100;
+  z-index: 30;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -243,3 +345,13 @@ export const MenuCheckContainer = styled.div`
     }
   }
 `
+
+// 결제 방식 선택 모달
+
+
+
+// 결제 화면 모달
+
+
+
+// 영수증 출력 모달
