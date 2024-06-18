@@ -347,7 +347,95 @@ export const MenuCheckContainer = styled.div`
 `
 
 // 결제 방식 선택 모달
-
+export const PaymentSelectContainer = styled.div`
+  position: absolute;
+  z-index: 40;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 1);
+  width: 86rem;
+  height: 130rem;
+  padding : 2.6rem;
+  border-radius : 2rem;
+  display : flex;
+  flex-direction : column;
+  justify-content : space-between;
+  h1 {
+    font-family : 'Pretendard-SemiBold';
+    font-size : 2.6rem;
+  }
+  .discount-option {
+    width : 16rem;
+    height : 14.3rem;
+    display : flex;
+    flex-direction : column;
+    justify-content : center;
+    align-items : center;
+    margin : 0 2rem 0 0;
+    background-color : ${props => props.theme.colors.colorBg};
+    border : 0.2rem solid ${props => props.theme.colors.gray1};
+    border-radius : 1.5rem;
+    font-size : 2.4rem;
+    img {
+      width : 8rem;
+      height : 8rem;
+      border-radius : 1rem;
+      margin : 0 0 1rem 0;
+    }
+  }
+  .payment-option {
+    width : 27rem;
+    height : 14rem;
+    display : flex;
+    flex-direction : column;
+    justify-content : center;
+    align-items : center;
+    margin : 0 2rem 0 0;
+    background-color : ${props => props.theme.colors.colorBg};
+    border : 0.2rem solid ${props => props.theme.colors.gray1};
+    border-radius : 1.5rem;
+    font-size : 2.4rem;
+    img {
+      width : 8rem;
+      border-radius : 1rem;
+      margin : 0 0 1rem 0;
+    }
+  }
+  hr{
+    margin : 60rem 0 0 0;
+    border: 0.1rem solid ${props => props.theme.colors.blue0};
+  }
+  .infoContainer {
+    display : flex;
+    align-items : center;
+    justify-content : space-between;
+    font-family : 'Pretendard-SemiBold';
+    font-size : 2.5rem;
+    .menuCount {
+      display : flex;      
+      width : 26rem;
+      justify-content:space-between;
+      p{
+        width : 10rem;
+        text-align : center;
+        background-color: ${props => props.theme.colors.blue1};
+        color: ${props => props.theme.colors.colorBg};
+        border-radius : 1rem;
+      }
+    }
+    .totalPrice {
+      display : flex;
+      width : 40rem;
+      justify-content:space-between;
+      p{
+        width : 25rem;
+        text-align : right;
+        color: ${props => props.theme.colors.blue1}
+      }
+    }
+  }
+`
 
 
 // 결제 화면 모달

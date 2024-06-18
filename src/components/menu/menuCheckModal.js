@@ -1,6 +1,7 @@
 import { useSearchParams } from "react-router-dom";
 import * as md from "../../styles/modalStyle";
 import { useState } from "react";
+import PaymentSelectModal from "../paymentSelectModal";
 
 
 function MenuCheckModal({ setIsCheckMenuModal }) {
@@ -54,7 +55,7 @@ function MenuCheckModal({ setIsCheckMenuModal }) {
           </div>
         </md.MenuCheckContainer>
         {
-          isPaymentSelectModal && <></>
+          isPaymentSelectModal && <PaymentSelectModal/>
         }
       </div>
     )
