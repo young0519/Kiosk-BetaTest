@@ -7,13 +7,27 @@ import DetailMenuModal from "../components/menu/detailMenuModal";
 import MenuCheckModal from "../components/menu/menuCheckModal";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import PaymentSelectModal from "../components/paymentSelectModal";
+import CardPaymentModal from "../components/cardPaymentModal";
+import { useDispatch, useSelector } from "react-redux";
+import { SetTotalMenuModal } from "../redux/kioskAction";
+import ReceiptModal from "../components/receiptModal";
 
 
 function MenuSelect() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const [isCheckMenuModal, setIsCheckMenuModal] = useState(false);
   const [isDetailMenuModal, setIsDetailMenuModal] = useState(false);
+  let checkMenuModalState = useSelector( (state)=>{ return state.checkMenuModalState } );
+  let paymentSelectModalState = useSelector( (state)=>{ return state.paymentSelectModalState } );
+  let cardPayModalState = useSelector( (state)=>{ return state.cardPayModalState } );
+  let receiptModalState = useSelector( (state)=>{ return state.receiptModalState } );
+
+  const moveToCheckMenu = () => {
+    dispatch(SetTotalMenuModal(true));
+
+  }
 
   return (
       <div>
@@ -24,10 +38,28 @@ function MenuSelect() {
           </md.ModalBackgroundContainer>
         }
         {
-          isCheckMenuModal &&
+          checkMenuModalState &&
           <md.ModalBackgroundContainer>
-            <MenuCheckModal setIsCheckMenuModal={setIsCheckMenuModal}/>
+            <MenuCheckModal/>
           </md.ModalBackgroundContainer>
+        }
+        {
+          paymentSelectModalState && 
+            <md.ModalBackgroundContainer>
+              <PaymentSelectModal/>
+            </md.ModalBackgroundContainer>
+        }
+        {
+          cardPayModalState && 
+          <md.ModalTopBackgroundContainer>
+            <CardPaymentModal />
+          </md.ModalTopBackgroundContainer>
+        }
+        {
+          receiptModalState && 
+          <md.ModalTopBackgroundContainer>
+            <ReceiptModal />
+          </md.ModalTopBackgroundContainer>
         }
         <m.MenuSelectContainer>
           <LanguageSelect/>
@@ -39,7 +71,7 @@ function MenuSelect() {
                 <h3 >총 주문 금액 <p>999,999</p>원</h3>
                 <button 
                   className="payBtn"
-                  onClick={() => {setIsCheckMenuModal(true)}}
+                  onClick={moveToCheckMenu}
                 >
                   결제하기
                 </button>

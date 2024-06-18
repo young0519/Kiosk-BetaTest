@@ -361,6 +361,13 @@ export const PaymentSelectContainer = styled.div`
   display : flex;
   flex-direction : column;
   justify-content : space-between;
+  .close {
+    position : absolute;
+    top: 2%;
+    right: 3%;
+    margin-left : auto;
+    width : 3.5rem;
+  }
   h1 {
     font-family : 'Pretendard-SemiBold';
     font-size : 2.6rem;
@@ -437,9 +444,123 @@ export const PaymentSelectContainer = styled.div`
   }
 `
 
-
 // 결제 화면 모달
+export const CardpayContainer = styled.div`
+  position: absolute;
+  z-index: 90;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 1);
+  width: 86rem;
+  height: 80rem;
+  padding : 4rem;
+  border-radius : 2rem;
+  display : flex;
+  flex-direction : column;
+  justify-content : space-between;
+  h1 {
+    font-family : 'Pretendard-SemiBold';
+    font-size : 2.6rem;
+  }
+  .infoContainer {
+    display : flex;
+    align-items : center;
+    justify-content : space-between;
+    font-family : 'Pretendard-SemiBold';
+    font-size : 2.5rem;
+    .menuCount {
+      display : flex;      
+      width : 26rem;
+      justify-content:space-between;
+      p{
+        width : 10rem;
+        text-align : center;
+        background-color: ${props => props.theme.colors.blue1};
+        color: ${props => props.theme.colors.colorBg};
+        border-radius : 1rem;
+      }
+    }
+    .totalPrice {
+      display : flex;
+      width : 40rem;
+      justify-content:space-between;
+      p{
+        width : 25rem;
+        text-align : right;
+        color: ${props => props.theme.colors.blue1}
+      }
+    }
+  }
+  button {
+    height : 11rem;
+    border : none;
+    font-size : 3rem;
+    font-family : 'Pretendard-Bold';
+    border-radius : 1rem;
+    &.cancel {
+      width : 16rem;
+    }
+    &.pay-approval {
+      width : 57rem;
+      background-color : ${props => props.theme.colors.blue1};
+      color : ${props => props.theme.colors.colorBg};
 
+    }
+  }
+  .imgBox {
+    background-color : ${props => props.theme.colors.gray1};
+    height : 40rem;
+    display : flex;
+    align-items : center;
+    justify-content : center;
+    border-radius : 1rem;
+    img {
+      height : 30rem;
+    }
+  }
+`
 
 
 // 영수증 출력 모달
+export const ReceiptModalContainer = styled.div`
+  position: absolute;
+  z-index: 90;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 1);
+  width: 86rem;
+  height: 50rem;
+  padding : 2rem;
+  border-radius : 2rem;
+  display : flex;
+  flex-direction : column;
+  justify-content : center;
+  align-items : center;
+  h1 {
+    font-family : 'Pretendard-SemiBold';
+    font-size : 3.5rem;
+    margin : 1.5rem 0;
+  }
+  .btnBox {
+    margin : 2rem 0 0 0;
+    width : 90%;
+    display : flex;
+    align-items : center;
+    justify-content : space-between;
+    button {
+      width : 35rem;
+      height : 15rem;
+      font-size : 3.8rem;
+      font-family : 'Pretendard-SemiBold';
+      letter-spacing : 0.15rem;
+      border : none;
+      border-radius : 1rem;
+      &.print {
+        background-color : ${props => props.theme.colors.blue1};
+        color : ${props => props.theme.colors.colorBg};
+      }
+    }
+  }
+`

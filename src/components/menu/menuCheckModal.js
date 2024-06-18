@@ -2,14 +2,21 @@ import { useSearchParams } from "react-router-dom";
 import * as md from "../../styles/modalStyle";
 import { useState } from "react";
 import PaymentSelectModal from "../paymentSelectModal";
+import { useDispatch } from "react-redux";
+import { SetPaymentModal, SetTotalMenuModal } from "../../redux/kioskAction";
 
 
-function MenuCheckModal({ setIsCheckMenuModal }) {
-
-  const [isPaymentSelectModal, setIsPaymentSelectModal] = useState(false);
-
+function MenuCheckModal() {
+  const dispatch = useDispatch();
+  
   const selectPackage = () => {
-    setIsPaymentSelectModal(true);
+    dispatch(SetTotalMenuModal(false));
+    dispatch(SetPaymentModal(true));
+
+  }
+
+  const backToMenu = () => {
+    dispatch(SetTotalMenuModal(false));
   }
     return (
       <div>
@@ -36,7 +43,7 @@ function MenuCheckModal({ setIsCheckMenuModal }) {
           <div className="btnContainer">
             <button 
               className="cancel"
-              onClick={()=> {setIsCheckMenuModal(false)}}
+              onClick={backToMenu}
             >
               취소
             </button>
@@ -54,9 +61,6 @@ function MenuCheckModal({ setIsCheckMenuModal }) {
             </button>
           </div>
         </md.MenuCheckContainer>
-        {
-          isPaymentSelectModal && <PaymentSelectModal/>
-        }
       </div>
     )
   }

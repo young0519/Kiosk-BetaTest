@@ -2,11 +2,31 @@ import * as md from "../styles/modalStyle"
 import blank_img from "../assets/imgs/gray_color_bg.png"
 import credit_card from "../assets/imgs/credit-card.png"
 import coupon from "../assets/imgs/coupon.png"
+import quit_btn from "../assets/imgs/quit_btn.png"
+import { useState } from "react"
+import CardPaymentModal from "./cardPaymentModal"
+import { useDispatch } from "react-redux"
+import { SetCardPayModal, SetPaymentModal } from "../redux/kioskAction"
 
 const PaymentSelectModal = () => {
+  const dispatch = useDispatch();
+  
+  const clickCardPay = () => {
+    dispatch(SetPaymentModal(false));
+    dispatch(SetCardPayModal(true));
+  };
+  const moveToBack = () => {
+    dispatch(SetPaymentModal(false));
+  };
+
 
   return (
     <md.PaymentSelectContainer>
+      <img 
+        className="close" 
+        onClick={moveToBack}
+        src={quit_btn} alt="닫기"
+      />
       <h1>결제 수단을 선택해주세요.</h1>
       <h1>1. 제휴 할인 선택</h1>
       <div style={{display:'flex', alignItems:'center', justifyContent:'start'}}>
@@ -15,8 +35,13 @@ const PaymentSelectModal = () => {
       </div>
       <h1>2. 결제 수단 선택</h1>
       <div style={{display:'flex', alignItems:'center', justifyContent:'start'}}>
-        <button className="payment-option"><img src={credit_card} alt="임시"/>카드</button>
-        <button className="payment-option"><img src={coupon} alt="임시"/>쿠폰 사용</button>
+        <button 
+          className="payment-option"
+          onClick={clickCardPay}
+        ><img src={credit_card} alt="임시"/>카드</button>
+        <button 
+          className="payment-option"
+        ><img src={coupon} alt="임시"/>쿠폰 사용</button>
       </div>
       <hr/>
       <div className="infoContainer">
@@ -31,7 +56,6 @@ const PaymentSelectModal = () => {
           <h3>원</h3>
         </div>
       </div>
-      
     </md.PaymentSelectContainer>
   )
 }
