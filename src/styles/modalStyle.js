@@ -181,7 +181,7 @@ export const DetailOptionContainer = styled.div`
   transform: translate(-50%, -50%);
   background-color: rgba(255, 255, 255, 1);
   width: 86rem;
-  height: 80rem;
+  height: 87.5rem;
   padding : 2.6rem 3rem;
   border-radius : 2rem;
   display : flex;
@@ -189,11 +189,14 @@ export const DetailOptionContainer = styled.div`
   justify-content : space-between;
   h1 {
     font-family : 'Pretendard-SemiBold';
-    font-size : 2.8rem;
+    font-size : 3rem;
+    &.title {
+      margin-top : 3rem;
+    }
   }
   .shot-option {
-    width : 20rem;
-    height : 20rem;
+    width : 22.3rem;
+    height : 22.3rem;
     display : flex;
     flex-direction : column;
     justify-content : center;
@@ -211,13 +214,14 @@ export const DetailOptionContainer = styled.div`
     }
     h3 {
       font-family : 'Pretendard-SemiBold';
-      font-size : 2.6rem;
+      font-size : 3rem;
+      margin-top : 0.5rem;
       color : ${props => props.theme.colors.blue1}
     }
   }
   .syrup-option {
-    width : 20rem;
-    height : 20rem;
+    width : 22.3rem;
+    height : 22.3rem;
     display : flex;
     flex-direction : column;
     justify-content : center;
@@ -227,18 +231,18 @@ export const DetailOptionContainer = styled.div`
     background-color : ${props => props.theme.colors.gray1};
 
     img{
-      width : 18rem;
-      height : 10rem;
+      width : 20.3rem;
+      height : 11.6rem;
       border-radius : 1rem;
     }
     h1 {
       font-family : 'Pretendard-SemiBold';
-      font-size : 2.1rem;
-      margin : 1.8rem 0 0.6rem 0;
+      font-size : 2.5rem;
+      margin : 1.8rem 0 0.5rem 0;
     }
     h3 {
       font-family : 'Pretendard-SemiBold';
-      font-size : 2.4srem;
+      font-size : 3rem;
       color : ${props => props.theme.colors.blue1}
     }
   }
