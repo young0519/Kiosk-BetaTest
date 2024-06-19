@@ -1,199 +1,180 @@
 {
-  "id": 1,
-  "name": "카페 아로마",
-  "masterUserId": 1,
-  "category": [
+  "topCategories": [
     {
-      "id": 1,
+      "name": "추천메뉴",
+      "className": "recommendedMenu",
+      "subCategories": [
+        {
+          "name": "시즌 메뉴",
+          "className": "seasonalMenu",
+          "items" : [
+            {
+              "name": "레몬 샤베트",
+              "price": 5500
+            },
+            {
+              "name": "멜론 소다",
+              "price": 4000
+            }
+          ]
+        },
+        {
+          "name": "할인&인기",
+          "className": "discountAndPopular",
+          "items" : [
+            {
+              "name": "아메리카노",
+              "price": 2500
+            },
+            {
+              "name": "핑크 자몽 에이드",
+              "price": 3500
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "커피",
-      "menu": [
+      "className": "coffee",
+      "subCategories": [
         {
-          "id": 1,
-          "name": "아메리카노",
-          "info": "진한 에스프레소와 물의 조화",
-          "price": 3500,
-          "photoUrl": "https://example.com/americano.jpg",
-          "option": [
+          "name": "에스프레소",
+          "className": "espresso",
+          "items" : [
             {
-              "id": 1,
-              "name": "샷 추가",
-              "menuId": 1,
-              "optionInfo": [
-                {
-                  "id": 1,
-                  "optionId": 1,
-                  "name": "1샷"
-                },
-                {
-                  "id": 2,
-                  "optionId": 1,
-                  "name": "2샷"
-                }
-              ]
+              "name": "아메리카노",
+              "price": 2500
+            },
+            {
+              "name": "에스프레소",
+              "price": 3000
+            },
+            {
+              "name": "카페 모카",
+              "price": 3000
+            },
+            {
+              "name": "카푸치노",
+              "price": 3000
+            },
+            {
+              "name": "헤이즐넛 아메리카노",
+              "price": 3000
+            },
+            {
+              "name": "플랫 화이트",
+              "price": 3000
+            },
+            {
+              "name": "아인슈페너",
+              "price": 3000
             }
           ]
         },
         {
-          "id": 2,
-          "name": "카페 라떼",
-          "info": "부드러운 우유와 에스프레소의 만남",
-          "price": 4000,
-          "photoUrl": "https://example.com/latte.jpg",
-          "option": []
+          "name": "라떼",
+          "className": "latte"
         },
         {
-          "id": 3,
-          "name": "카푸치노",
-          "info": "풍부한 우유 거품과 시나몬 파우더",
-          "price": 4500,
-          "photoUrl": "https://example.com/cappuccino.jpg",
-          "option": [
+          "name": "콜드브루",
+          "className": "coldBrew"
+        },
+        {
+          "name": "디카페인",
+          "className": "decaf"
+        }
+      ]
+    },
+    {
+      "name": "음료",
+      "className": "beverages",
+      "subCategories": [
+        {
+          "name": "에이드",
+          "className": "ade",
+          "items" : [
             {
-              "id": 2,
-              "name": "시럽 추가",
-              "menuId": 3,
-              "optionInfo": [
-                {
-                  "id": 3,
-                  "optionId": 2,
-                  "name": "바닐라 시럽"
-                },
-                {
-                  "id": 4,
-                  "optionId": 2,
-                  "name": "카라멜 시럽"
-                }
-              ]
+              "name": "레몬에이드",
+              "price": 2000
+            },
+            {
+              "name": "복숭아에이드",
+              "price": 3000
             }
           ]
         },
         {
-          "id": 4,
-          "name": "카라멜 마끼아또",
-          "info": "달콤한 카라멜과 에스프레소의 조화",
-          "price": 5000,
-          "photoUrl": "https://example.com/macchiato.jpg",
-          "option": [
+          "name": "프라페",
+          "className": "frappuccino"
+        },
+        {
+          "name": "스무디&주스",
+          "className": "smoothieAndJuice"
+        },
+        {
+          "name": "라떼/초콜릿",
+          "className": "lateAndChocolate"
+        },
+        {
+          "name": "차",
+          "className": "tea"
+        }
+      ]
+    },
+    {
+      "name": "음식",
+      "className": "food",
+      "subCategories": [
+        {
+          "name": "디저트",
+          "className": "dessert",
+          "items" : [
             {
-              "id": 3,
-              "name": "휘핑크림 추가",
-              "menuId": 4,
-              "optionInfo": [
-                {
-                  "id": 5,
-                  "optionId": 3,
-                  "name": "일반 휘핑크림"
-                },
-                {
-                  "id": 6,
-                  "optionId": 3,
-                  "name": "에스프레소 휘핑크림"
-                }
-              ]
+              "name": "슈크림빵",
+              "price": 23500
+            },
+            {
+              "name": "스콘",
+              "price": 3800
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "name": "콜드 브루",
-      "menu": [
-        {
-          "id": 5,
-          "name": "콜드 브루",
-          "info": "차가운 물로 우려낸 깊은 풍미",
-          "price": 4500,
-          "photoUrl": "https://example.com/coldbrew.jpg",
-          "option": []
         },
         {
-          "id": 6,
-          "name": "콜드 브루 라떼",
-          "info": "부드러운 우유와 콜드 브루의 만남",
-          "price": 5000,
-          "photoUrl": "https://example.com/coldbrewlatte.jpg",
-          "option": []
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "name": "라떼",
-      "menu": [
-        {
-          "id": 14,
-          "name": "바닐라 라떼",
-          "info": "달콤한 바닐라 향과 부드러운 우유",
-          "price": 4500,
-          "photoUrl": "https://example.com/vanillalatte.jpg",
-          "option": []
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "name": "프라푸치노",
-      "menu": [
-        {
-          "id": 7,
-          "name": "자바 칩 프라푸치노",
-          "info": "달콤한 자바 칩과 커피의 조화",
-          "price": 5500,
-          "photoUrl": "https://example.com/javachip.jpg",
-          "option": []
+          "name": "베이커리",
+          "className": "bakery"
         },
         {
-          "id": 8,
-          "name": "녹차 프라푸치노",
-          "info": "진한 녹차와 달콤한 휘핑크림",
-          "price": 5500,
-          "photoUrl": "https://example.com/greentea.jpg",
-          "option": []
+          "name": "케이크",
+          "className": "cake"
         }
       ]
     },
     {
-      "id": 5,
-      "name": "티",
-      "menu": [
+      "name": "MD",
+      "className": "md",
+      "subCategories": [
         {
-          "id": 9,
-          "name": "페퍼민트 티",
-          "info": "상쾌한 페퍼민트 향",
-          "price": 3000,
-          "photoUrl": "https://example.com/peppermint.jpg",
-          "option": []
+          "name": "커피",
+          "className": "coffeeMd",
+          "items" : [
+            {
+              "name": "스틱 아메리카노",
+              "price": 5000
+            },
+            {
+              "name": "DE) 스틱 아메리카노",
+              "price": 5500
+            }
+          ]
         },
         {
-          "id": 10,
-          "name": "캐모마일 티",
-          "info": "은은한 캐모마일 향",
-          "price": 3000,
-          "photoUrl": "https://example.com/chamomile.jpg",
-          "option": []
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "name": "디저트",
-      "menu": [
-        {
-          "id": 11,
-          "name": "초콜릿 케이크",
-          "info": "진한 초콜릿 맛",
-          "price": 4500,
-          "photoUrl": "https://example.com/chococake.jpg",
-          "option": []
+          "name": "차",
+          "className": "teaMd"
         },
         {
-          "id": 12,
-          "name": "티라미수",
-          "info": "부드러운 마스카포네 치즈와 커피 향",
-          "price": 5000,
-          "photoUrl": "https://example.com/tiramisu.jpg",
-          "option": []
+          "name": "텀블러/컵",
+          "className": "tumblersAndCups"
         }
       ]
     }

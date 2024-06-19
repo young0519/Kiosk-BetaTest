@@ -27,19 +27,20 @@ export const startBtnContainer = styled.div `
 
 export const languageBox = styled.div`
   width: 100%;
-  height: 3rem;
+  height: 4rem;
   display: flex;
   align-items: center;
   justify-content: end;
   padding: 0 4rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
 
   button {
-    width: 11.5rem;
-    height: 3.5rem;
+    width: 14.2rem;
+    height: 4rem;
     color: ${props => props.theme.colors.colorBg};
     background-color: ${props => props.theme.colors.gray2};
-    font-size: 1.9rem;
+    font-size: 2.5rem;
+    font-family : 'Pretendard-Medium';
     margin: 0 0.5rem;
     border: none;
     border-radius: 5rem;

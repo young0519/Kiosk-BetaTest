@@ -18,65 +18,73 @@ export const MenuSelectContainer = styled.div`
 
 // 상위 메뉴 카테고리 UI
 export const TopCategoryBox = styled.div`
-  width : 100%;
-  height : 5rem;
+  width : 95%;
+  margin : 0 auto;
+  height : 6rem;
   display : flex;
+  margin-top : 2.5rem;
   align-items: end;
   justify-content : space-around;
   box-shadow : 0 35px 40px -10px rgba(0, 0, 0, 0.1);
-
-  button {
-    height : 4.5rem;
-    width :  15rem;
-    font-size : 2.5rem;
-    font-family : 'Pretendard-SemiBold';
-    background-color : ${props => props.theme.colors.colorBg};
-    border : none;
-    &:hover {
-    border-bottom : 0.5rem solid ${props => props.theme.colors.blue1}
-    }
+`
+// 상위 카테고리 메뉴 버튼 UI
+export const TopCategoryBtn = styled.button`
+  height : 5rem;
+  width :  15rem;
+  font-size : 3rem;
+  font-family : 'Pretendard-SemiBold';
+  background-color : ${props => props.theme.colors.colorBg};
+  border : none;
+  &.active {
+  border-bottom : 0.5rem solid ${props => props.theme.colors.blue1}
   }
 `
 // 하위 메뉴 카테고리 UI 
 export const SubCategoryBox = styled.div`
-  width : 100%;
-  height : 3.5rem;
-  margin-top : 1rem;
-  display : flex;
-  align-items: start;
-  justify-content : space-around;
+  width : 95%;
+  margin : 0 auto;
+  height : 4.5rem;
+  margin-top : 2rem;
+  display : grid;
+  grid-template-columns : repeat(5, 1fr);
+  margin-left : 5.4rem;
   
-  button {
-    height : 3.5rem;
-    width :  12rem;
-    font-size : 2rem;
+`
+// 하위 카테고리 메뉴 버튼 UI
+export const SubCategoryBtn = styled.button`
+    height : 4rem;
+    width : 15rem;
+    font-size : 2.5rem;
     font-family : 'Pretendard-SemiBold';
     border : none;
     background-color:transparent;
     color : ${props => props.theme.colors.blue1};
-    &:hover {
+    &.active {
       background-color : ${props => props.theme.colors.blue1};
       color : ${props => props.theme.colors.colorBg};
       border-radius : 100rem;
     }
-  }
 `
+
 // 전체 메뉴 보여주기 레이아웃
 export const MenuItemContainer = styled.div`
-  width : 100%;
-  height : 102rem;
-  display : grid;
+  width: 95%;
+  height: 94.85rem;
+  margin: 0 auto;
+  display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(3, 1fr);
   place-items: center;
-  row-gap: 0.4rem;
-  margin-top : 2rem;
+  row-gap: 3rem;
+  column-gap: 2.3rem;
+  margin-top: 2rem;
   overflow-y: scroll;
 `
 
 // 메뉴 Item 레이아웃
 export const MenuItemBox = styled.div`
-  width : 20rem;
-  height : 25rem;
+  width : 21rem;
+  height : 29rem;
   display : flex;
   flex-direction : column;
   align-items : center;
@@ -84,17 +92,20 @@ export const MenuItemBox = styled.div`
   cursor : pointer;
   
   img {
-    width: 18rem;
-    height : 18rem;
+    width: 18.5rem;
+    height : 18.5rem;
     border-radius : 1rem;
   }
   h1 {
-    margin : 0.5rem 0;
-    font-size : 2rem;
+    width : 24rem;
+    text-align : center;
+    margin-top : 1.4rem;
+    margin-bottom : 0.7rem;
+    font-size : 2.8rem;
     font-family : 'Pretendard-SemiBold';
   }
   p {
-    font-size : 1.6rem;
+    font-size : 2.3rem;
     font-family : 'Pretendard-SemiBold';
   }
 `

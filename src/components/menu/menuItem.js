@@ -2,8 +2,8 @@ import gray_color_bg from '../../assets/imgs/gray_color_bg.png'
 import * as m from "../../styles/menuPageStyle"
 
 
-function MenuItem({setIsDetailMenuModal}) {
-
+function MenuItem({key, name, price, setIsDetailMenuModal}) {
+  const formattedPrice = price.toLocaleString('ko-KR');
 
   return (
     <m.MenuItemBox 
@@ -13,8 +13,8 @@ function MenuItem({setIsDetailMenuModal}) {
         src={gray_color_bg} 
         alt="임시 사진"
       />
-      <h1 >아메리카노</h1>
-      <p>2,500원</p>
+      <h1 >{name}</h1>
+      <p>{formattedPrice} 원</p>
     </m.MenuItemBox>
   )
 }
