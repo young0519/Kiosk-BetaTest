@@ -28,12 +28,12 @@ const PaymentSelectModal = () => {
         src={quit_btn} alt="닫기"
       />
       <h1>결제 수단을 선택해주세요.</h1>
-      <h1>1. 제휴 할인 선택</h1>
+      <h1 className="payInfo">1. 제휴 할인 선택</h1>
       <div style={{display:'flex', alignItems:'center', justifyContent:'start'}}>
         <button className="discount-option"><img src={blank_img} alt="임시"/>KT</button>
         <button className="discount-option"><img src={blank_img} alt="임시"/>CJONE</button>
       </div>
-      <h1>2. 결제 수단 선택</h1>
+      <h1 className="payInfo">2. 결제 수단 선택</h1>
       <div style={{display:'flex', alignItems:'center', justifyContent:'start'}}>
         <button 
           className="payment-option"

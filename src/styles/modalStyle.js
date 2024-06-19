@@ -372,19 +372,23 @@ export const PaymentSelectContainer = styled.div`
   h1 {
     font-family : 'Pretendard-SemiBold';
     font-size : 3rem;
+    margin-bottom : 2rem;
+    &.payInfo {
+      margin-bottom : 0rem;
+    }
   }
   .discount-option {
-    width : 16rem;
+    width : 18rem;
     height : 14.3rem;
     display : flex;
     flex-direction : column;
     justify-content : center;
     align-items : center;
-    margin : 0 2rem 0 0;
+    margin : 0 2rem 5rem 0;
     background-color : ${props => props.theme.colors.colorBg};
     border : 0.2rem solid ${props => props.theme.colors.gray1};
     border-radius : 1.5rem;
-    font-size : 2.4rem;
+    font-size : 3rem;
     img {
       width : 8rem;
       height : 8rem;
@@ -393,17 +397,18 @@ export const PaymentSelectContainer = styled.div`
     }
   }
   .payment-option {
-    width : 27rem;
+    width : 29rem;
     height : 14rem;
     display : flex;
     flex-direction : column;
-    justify-content : center;
+    justify-content : space-between;
     align-items : center;
     margin : 0 2rem 0 0;
     background-color : ${props => props.theme.colors.colorBg};
     border : 0.2rem solid ${props => props.theme.colors.gray1};
     border-radius : 1.5rem;
-    font-size : 2.4rem;
+    font-size : 3rem;
+    font-family : 'Pretendard-SemiBold';
     img {
       width : 8rem;
       border-radius : 1rem;
