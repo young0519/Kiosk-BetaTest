@@ -414,13 +414,16 @@ export const PaymentSelectContainer = styled.div`
       border-radius : 1rem;
       margin : 0 0 1rem 0;
     }
+    &.active {
+      border : 0.4rem solid ${props => props.theme.colors.blue1};
+    }
   }
   .payment-option {
     width : 29rem;
     height : 14rem;
     display : flex;
     flex-direction : column;
-    justify-content : space-between;
+    justify-content : center;
     align-items : center;
     margin : 0 2rem 0 0;
     background-color : ${props => props.theme.colors.colorBg};
@@ -429,7 +432,7 @@ export const PaymentSelectContainer = styled.div`
     font-size : 3rem;
     font-family : 'Pretendard-SemiBold';
     img {
-      width : 8rem;
+      height : 6rem;
       border-radius : 1rem;
       margin : 0 0 1rem 0;
     }

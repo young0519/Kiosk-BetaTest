@@ -10,6 +10,26 @@ import { SetCardPayModal, SetPaymentModal } from "../redux/kioskAction"
 
 const PaymentSelectModal = () => {
   const dispatch = useDispatch();
+
+  const [selectedDiscount, setSelectedDiscount] = useState('');
+  const [isCouponUse, setIsCouponUse] = useState('');
+
+  const handleDiscountClick = (discount) => {
+    setSelectedDiscount(discount);
+    if (selectedDiscount === discount) {
+      setSelectedDiscount('');
+    } else {
+      setSelectedDiscount(discount);
+    }
+  };
+  const handleCouponClick = (coupon) => {
+    setIsCouponUse(coupon);
+    if (isCouponUse === coupon) {
+      setIsCouponUse('');
+    } else {
+      setIsCouponUse(coupon);
+    }
+  };
   
   const clickCardPay = () => {
     dispatch(SetPaymentModal(false));
@@ -30,8 +50,14 @@ const PaymentSelectModal = () => {
       <h1>결제 수단을 선택해주세요.</h1>
       <h1 className="payInfo">1. 제휴 할인 선택</h1>
       <div style={{display:'flex', alignItems:'center', justifyContent:'start'}}>
-        <button className="discount-option"><img src={blank_img} alt="임시"/>KT</button>
-        <button className="discount-option"><img src={blank_img} alt="임시"/>CJONE</button>
+        <button 
+          className={`discount-option KT ${selectedDiscount === 'KT' ? 'active' : ''}`}
+          onClick={() => handleDiscountClick('KT')}
+        ><img src={blank_img} alt="임시"/>KT</button>
+        <button 
+          className={`discount-option CJONE ${selectedDiscount === 'CJONE' ? 'active' : ''}`}
+          onClick={() => handleDiscountClick('CJONE')}
+        ><img src={blank_img} alt="임시"/>CJONE</button>
       </div>
       <h1 className="payInfo">2. 결제 수단 선택</h1>
       <div style={{display:'flex', alignItems:'center', justifyContent:'start'}}>
