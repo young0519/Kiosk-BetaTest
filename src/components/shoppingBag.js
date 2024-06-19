@@ -1,8 +1,11 @@
+import * as m from "../styles/menuPageStyle";
+
+
 function ShoppingBag() {
     return (
-      <div className=" bg-white w-[656px] h-[358px] rounded-[10px]">
+      <m.SmallShoppingBag>
         장바구니
-      </div>
+      </m.SmallShoppingBag>
     )
   }
 export default ShoppingBag;  
