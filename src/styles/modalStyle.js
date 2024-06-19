@@ -274,13 +274,15 @@ export const MenuCheckContainer = styled.div`
   height: 130rem;
   padding : 2.6rem;
   border-radius : 2rem;
-  display : grid;
-  grid-template-rows: 10rem 0.1rem 85rem 5rem 0.1rem 8rem 15rem;
+  display : flex;
+  flex-direction  : column;
+  justify-content : space-between;
   h1 {
-    margin : 4rem 0 2.5rem 0;
-    font-size : 2.8rem;
+    margin : 2rem 0 0rem 0;
+    font-size : 3rem;
     font-family : 'Pretendard-SemiBold';
     letter-spacing : 0.1rem;
+    height : 4rem;
     &.colored {
       margin : 0 0 1rem 0;
       color: ${props => props.theme.colors.blue2}
@@ -292,31 +294,32 @@ export const MenuCheckContainer = styled.div`
     align-items : center;
     justify-content : space-between;
     font-family : 'Pretendard-SemiBold';
-    font-size : 2.5rem;
+    font-size : 3rem;
     .menuCount {
       display : flex;      
-      width : 26rem;
       justify-content:space-between;
       p{
-        width : 10rem;
         text-align : center;
         background-color: ${props => props.theme.colors.blue1};
         color: ${props => props.theme.colors.colorBg};
         border-radius : 1rem;
+        margin : 0 2rem;
+        padding : 0 5rem;
       }
     }
     .totalPrice {
       display : flex;
-      width : 40rem;
       justify-content:space-between;
       p{
-        width : 25rem;
         text-align : right;
-        color: ${props => props.theme.colors.blue1}
+        font-size : 3.2rem;
+        color: ${props => props.theme.colors.blue1};
+        margin : 0 1.5rem 0 8rem;
       }
     }
   }
   .btnContainer {
+    height : 15.7rem;
     display : flex;
     align-items : center;
     justify-content : space-between;

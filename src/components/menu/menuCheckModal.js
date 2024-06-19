@@ -23,7 +23,7 @@ function MenuCheckModal() {
         <md.MenuCheckContainer>
           <h1>주문 내역을 다시 한번 확인하여 주세요.</h1>
           <hr/>
-          <div>
+          <div style={{height : '80rem'}}>
 
           </div>
           <h1 className="colored">※ 매장 식사 시, 일회용 컵 사용 불가합니다 ※</h1>
