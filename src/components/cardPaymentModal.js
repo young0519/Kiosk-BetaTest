@@ -1,10 +1,13 @@
 import * as md from "../styles/modalStyle"
 import card_pay from "../assets/imgs/card_pay.png"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { SetCardPayModal, SetPaymentModal, SetReceiptModal } from "../redux/kioskAction";
 
 const CardPaymentModal = () => {
   const dispatch = useDispatch();
+  let totalMenuCount = useSelector((state) => state.totalMenuCount);
+  let totalPrice = useSelector((state) => state.totalPrice);
+
 
   const moveToReceipt = () => {
     dispatch(SetCardPayModal(false));
@@ -23,12 +26,12 @@ const CardPaymentModal = () => {
       <div className="infoContainer">
         <div className="menuCount">
           <h3>선택메뉴</h3>
-          <p>1</p>
+          <p>{totalMenuCount}</p>
           <h3>개</h3>
         </div>
         <div className="totalPrice">
           <h3>총 금액</h3>
-          <p>2,500</p>
+          <p>{totalPrice.toLocaleString('ko-KR')}</p>
           <h3>원</h3>
         </div>
       </div>

@@ -69,7 +69,7 @@ function MenuSelect() {
               <ShoppingBag/>
               <m.CurrentBagContainer>
               <h3 >선택 메뉴<p className="selected-menu">{totalMenuCount}</p>개</h3>
-                <h3 >총 주문 금액 <p>{totalPrice}</p>원</h3>
+                <h3 >총 주문 금액 <p>{totalPrice.toLocaleString('ko-KR')}</p>원</h3>
                 <button 
                   className="payBtn"
                   onClick={moveToCheckMenu}

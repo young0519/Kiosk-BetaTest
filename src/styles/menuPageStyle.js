@@ -153,14 +153,40 @@ export const SmallShoppingItem = styled.div`
 `
 // 큰 장바구니 UI
 export const BigShoppingBag = styled.div`
-  width : 65.6rem;
-  height : 33rem;
+  width : 80.8rem;
+  height : 80rem;
   border-radius : 1rem;
   background-color : ${props => props.theme.colors.colorBg};
 `
 // 장바구니 큰 ITEM UI
 export const BigShoppingItem = styled.div`
+  width : 80.8rem;
+  height : 4.9rem;
+  display : flex;
+  align-items : center;
+  justify-content : space-between;
+  font-size : 2.5rem;
+  font-family : 'Pretendard-Medium';
+  padding : 0 2rem;
+  border-radius : 1rem;
+  margin : 0 0 1rem 0;
 
+  &:nth-child(odd) {
+    background-color : rgba(186, 214, 255, 0.2);
+  }
+
+  .menu-info {
+    width : 41.5rem;
+    display : flex; 
+    align-items : center;
+    justify-content : space-between;
+    }
+    .quantity {
+      display : inline-block;
+      width : 7rem;
+      text-align : center;
+    }
+  }
 `
 
 // 현재 장바구니 현황

@@ -5,11 +5,15 @@ import coupon from "../assets/imgs/coupon.png"
 import quit_btn from "../assets/imgs/quit_btn.png"
 import { useState } from "react"
 import CardPaymentModal from "./cardPaymentModal"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { SetCardPayModal, SetPaymentModal } from "../redux/kioskAction"
 
 const PaymentSelectModal = () => {
   const dispatch = useDispatch();
+
+  let totalMenuCount = useSelector((state) => state.totalMenuCount);
+  let totalPrice = useSelector((state) => state.totalPrice);
+
 
   const [selectedDiscount, setSelectedDiscount] = useState('');
   const [isCouponUse, setIsCouponUse] = useState('');
@@ -73,12 +77,12 @@ const PaymentSelectModal = () => {
       <div className="infoContainer">
         <div className="menuCount">
           <h3>선택메뉴</h3>
-          <p>1</p>
+          <p>{totalMenuCount}</p>
           <h3>개</h3>
         </div>
         <div className="totalPrice">
           <h3>총 금액</h3>
-          <p>2,500</p>
+          <p>{totalPrice.toLocaleString('ko-KR')}</p>
           <h3>원</h3>
         </div>
       </div>

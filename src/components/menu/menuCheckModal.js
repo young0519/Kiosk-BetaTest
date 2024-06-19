@@ -1,13 +1,18 @@
 import { useSearchParams } from "react-router-dom";
 import * as md from "../../styles/modalStyle";
+import * as m from "../../styles/menuPageStyle";
 import { useState } from "react";
 import PaymentSelectModal from "../paymentSelectModal";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { SetPaymentModal, SetTotalMenuModal } from "../../redux/kioskAction";
+import TotalMenuList from "../totalMenuList";
 
 
 function MenuCheckModal() {
   const dispatch = useDispatch();
+  let totalMenuCount = useSelector((state) => state.totalMenuCount);
+  let totalPrice = useSelector((state) => state.totalPrice);
+
   
   const selectPackage = () => {
     dispatch(SetTotalMenuModal(false));
@@ -23,20 +28,18 @@ function MenuCheckModal() {
         <md.MenuCheckContainer>
           <h1>주문 내역을 다시 한번 확인하여 주세요.</h1>
           <hr/>
-          <div style={{height : '80rem'}}>
-
-          </div>
+          <TotalMenuList/>
           <h1 className="colored">※ 매장 식사 시, 일회용 컵 사용 불가합니다 ※</h1>
           <hr/>
           <div className="infoContainer">
             <div className="menuCount">
               <h3>선택메뉴</h3>
-              <p>1</p>
+              <p>{totalMenuCount}</p>
               <h3>개</h3>
             </div>
             <div className="totalPrice">
               <h3>총 금액</h3>
-              <p>2,500</p>
+              <p>{totalPrice.toLocaleString('ko-KR')}</p>
               <h3>원</h3>
             </div>
           </div>
