@@ -196,6 +196,9 @@ export const DetailOptionContainer = styled.div`
       margin-top : 3rem;
     }
   }
+  &.active {
+    border : 0.1rem solid ${props => props.theme.colors.blue1};
+  }
   .shot-option {
     width : 22.3rem;
     height : 22.3rem;
@@ -219,6 +222,9 @@ export const DetailOptionContainer = styled.div`
       font-size : 3rem;
       margin-top : 0.5rem;
       color : ${props => props.theme.colors.blue1}
+    }
+    &.active {
+      border : 0.5rem solid ${props => props.theme.colors.blue1};
     }
   }
   .syrup-option {
@@ -247,6 +253,10 @@ export const DetailOptionContainer = styled.div`
       font-size : 3rem;
       color : ${props => props.theme.colors.blue1}
     }
+    &.active {
+      border : 0.5rem solid ${props => props.theme.colors.blue1};
+    }
+
   }
   .btnBox {
     display : flex;
