@@ -14,13 +14,14 @@ import right_arrow from '../../assets/imgs/arrow-right.png'
 import DetailOptionModal from "./detailOptionModal";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { SetMenuDetailModal } from "../../redux/kioskAction";
+import { SetMenuDetailModal, SetPayListInfo } from "../../redux/kioskAction";
 
 
 function DetailMenuModal() {
   const dispatch = useDispatch();
 
   let menuInfoList = useSelector( (state)=>{ return state.menuInfo } );
+  let shoppingBagList = useSelector( (state)=>{ return state.shoppingBagList } );
   const formattedPrice = menuInfoList.menuPrice.toLocaleString('ko-KR');
 
 
@@ -58,8 +59,15 @@ function DetailMenuModal() {
   };
 
   const AddCartClick = () => {
+    const addMenu = {
+      menuName: menuInfoList.menuName,
+      quantity: quantity,
+      totalPrice: totalPrice
+    };
+  
+    dispatch(SetPayListInfo([...shoppingBagList, addMenu]));
     dispatch(SetMenuDetailModal(false));
-  }
+  };
 
   useEffect(()=> {
     const totalPrice = quantity*menuInfoList.menuPrice;
