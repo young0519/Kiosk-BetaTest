@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import * as m from "../styles/mainPageStyle";
 import LanguageSelect from "../components/languageSelect";
+import wow_img from "../assets/imgs/wowImg.png"
 
 
 function KioskMain() {
@@ -10,6 +11,8 @@ function KioskMain() {
   return (
     <m.KioskMainContainer>
       <LanguageSelect/>
+      <img src={wow_img}/>
+      <h1>HOIKS</h1>
       <m.startBtnContainer >
         <button 
           onClick={moveToMenu}

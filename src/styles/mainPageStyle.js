@@ -7,6 +7,9 @@ export const KioskMainContainer = styled.div`
     flex-direction : column;
     justify-content : space-between;
     align-items : center;
+    h1 {
+    font-size : 6rem;
+    }
 `
 export const startBtnContainer = styled.div `
     width : 100%;
