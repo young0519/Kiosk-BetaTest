@@ -4,6 +4,9 @@ export const KioskMainContainer = styled.div`
     width : 100vw;
     height : 100vh;
     display : flex;
+    flex-direction : column;
+    justify-content : space-between;
+    align-items : center;
 `
 export const startBtnContainer = styled.div `
     width : 100%;
@@ -29,7 +32,7 @@ export const languageBox = styled.div`
   align-items : center;
   justify-content : end;
   padding : 0 4rem;
-  margin : 1rem 0 0 0;
+  margin-top : 1rem;
 
   button {
     width : 11.5rem;

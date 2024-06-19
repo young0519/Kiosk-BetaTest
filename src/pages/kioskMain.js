@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import * as m from "../styles/mainPageStyle";
+import LanguageSelect from "../components/languageSelect";
 
 
 function KioskMain() {
@@ -8,6 +9,7 @@ function KioskMain() {
   
   return (
     <m.KioskMainContainer>
+      <LanguageSelect/>
       <m.startBtnContainer >
         <button 
           onClick={moveToMenu}
