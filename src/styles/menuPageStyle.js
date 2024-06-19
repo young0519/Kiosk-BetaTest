@@ -5,7 +5,7 @@ export const MenuSelectContainer = styled.div`
   width : 100vw;
   .go_to_credit {
     width : 100%;
-    height : 30rem;
+    height : 35rem;
     display : flex;
     justify-content : space-between;
     align-items : center;
@@ -69,7 +69,7 @@ export const SubCategoryBtn = styled.button`
 // 전체 메뉴 보여주기 레이아웃
 export const MenuItemContainer = styled.div`
   width: 95%;
-  height: 94.85rem;
+  height: 89.85rem;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -112,30 +112,76 @@ export const MenuItemBox = styled.div`
 
 // 작은 장바구니 UI
 export const SmallShoppingBag = styled.div`
-  width : 70rem;
-  height : 27rem;
+  width : 65.6rem;
+  height : 33rem;
   border-radius : 1rem;
   background-color : ${props => props.theme.colors.colorBg};
+  padding : 1.5rem;
+`
+// 장바구니 짧은 ITEM UI
+export const SmallShoppingItem = styled.div`
+  width : 60rem;
+  height : 4.9rem;
+  display : flex;
+  align-items : center;
+  justify-content : space-between;
+  font-size : 2.5rem;
+  font-family : 'Pretendard-Medium';
+  border-bottom : 0.1rem solid ${props => props.theme.colors.blue0};
+  .menu-info {
+    width : 41.5rem;
+    display : flex; 
+    align-items : center;
+    justify-content : space-between;
+    }
+    .quantity-info {
+      .quantity {
+        display : inline-block;
+        width : 7rem;
+        text-align : center;
+      }
+      .updown-btn {
+        width : 1.74rem;
+        height : 1.74rem;
+        margin : 0 0.5rem;
+      }
+  }
+  img {
+    width : 1.273rem;
+    height : 1.273rem;
+  }
+`
+// 큰 장바구니 UI
+export const BigShoppingBag = styled.div`
+  width : 65.6rem;
+  height : 33rem;
+  border-radius : 1rem;
+  background-color : ${props => props.theme.colors.colorBg};
+`
+// 장바구니 큰 ITEM UI
+export const BigShoppingItem = styled.div`
+
 `
 
 // 현재 장바구니 현황
 export const CurrentBagContainer = styled.div`
-  width : 32rem;  
-  height : 27rem;
+  width : 36rem;  
+  height : 32rem;
   display : flex;
   flex-direction : column;
   justify-content : space-between;
 
   h3 {
-    font-size : 2.1rem;
+    font-size : 2.8rem;
     font-family : 'Pretendard-Regular';
     text-align: right;
   }
   p {
     display : inline-block;
-    width : 13rem;
+    width : 11.4rem;
+    height : 4rem;
     text-align : center;
-    font-size : 2rem;
+    font-size : 3rem;
     font-family : 'Pretendard-SemiBold';
     margin : 0 2rem;
     border-radius : 1rem;
@@ -146,23 +192,23 @@ export const CurrentBagContainer = styled.div`
     } 
   }
   button {
-    width : 32rem;
+    width : 36rem;
     color : ${props => props.theme.colors.colorBg};
     border : none;
     border-radius : 1rem;
     &.payBtn {
-      height : 11rem;
+      height : 14.2rem;
       background-color : ${props => props.theme.colors.blue1};
-      font-size : 3rem;
+      font-size : 3.7rem;
       font-family : 'Pretendard-Bold';
       letter-spacing : 0.2rem;
       }
-      &.backBtn {
-        height : 7rem;
-        font-size : 2.2rem;
-        background-color : ${props => props.theme.colors.gray6};
-        font-family : 'Pretendard-SemiBold';
-        color : ${props => props.theme.colors.colorMain};
+    &.backBtn {
+      height : 7.5rem;
+      font-size : 3rem;
+      background-color : ${props => props.theme.colors.gray6};
+      font-family : 'Pretendard-SemiBold';
+      color : ${props => props.theme.colors.colorMain};
     }
   }
 

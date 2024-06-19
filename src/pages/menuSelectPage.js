@@ -5,7 +5,7 @@ import * as m from "../styles/menuPageStyle";
 import * as md from "../styles/modalStyle";
 import DetailMenuModal from "../components/menu/detailMenuModal";
 import MenuCheckModal from "../components/menu/menuCheckModal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PaymentSelectModal from "../components/paymentSelectModal";
 import CardPaymentModal from "../components/cardPaymentModal";
@@ -23,10 +23,11 @@ function MenuSelect() {
   let paymentSelectModalState = useSelector( (state)=>{ return state.paymentSelectModalState } );
   let cardPayModalState = useSelector( (state)=>{ return state.cardPayModalState } );
   let receiptModalState = useSelector( (state)=>{ return state.receiptModalState } );
+  let totalMenuCount = useSelector((state) => state.totalMenuCount);
+  let totalPrice = useSelector((state) => state.totalPrice);
 
   const moveToCheckMenu = () => {
     dispatch(SetTotalMenuModal(true));
-
   }
 
   return (
@@ -67,8 +68,8 @@ function MenuSelect() {
           <div className="go_to_credit">
               <ShoppingBag/>
               <m.CurrentBagContainer>
-                <h3 >선택 메뉴<p className="selected-menu">4</p>개</h3>
-                <h3 >총 주문 금액 <p>999,999</p>원</h3>
+              <h3 >선택 메뉴<p className="selected-menu">{totalMenuCount}</p>개</h3>
+                <h3 >총 주문 금액 <p>{totalPrice}</p>원</h3>
                 <button 
                   className="payBtn"
                   onClick={moveToCheckMenu}

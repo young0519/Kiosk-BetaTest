@@ -22,6 +22,22 @@ export const SetPayListInfo = (content) => {
   }
 }
 
+// 최종 결제 가격 정보 저장하는 action 
+export const SetTotalPrice = (content) => {
+  return {
+    type : 'SET_TOTAL_PRICE',
+    content
+  }
+}
+
+// 최종 메뉴 갯수 정보 저장하는 action 
+export const SetTotalCount = (content) => {
+  return {
+    type : 'SET_TOTAL_COUNT',
+    content
+  }
+}
+
 
 // 메뉴 최종 확인 모달 여부 저장하는 action
 export const SetTotalMenuModal = (content) => {

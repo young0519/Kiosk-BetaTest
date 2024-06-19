@@ -62,6 +62,7 @@ function DetailMenuModal() {
     const addMenu = {
       menuName: menuInfoList.menuName,
       quantity: quantity,
+      perPrice : menuInfoList.menuPrice,
       totalPrice: totalPrice
     };
   

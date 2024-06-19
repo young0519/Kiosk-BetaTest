@@ -10,7 +10,9 @@ export const INITIAL_STATE = {
   },
   shoppingBagList : [
 
-  ]
+  ],
+  totalPrice : 0,
+  totalMenuCount : 0,
 
 };
 
@@ -50,6 +52,16 @@ export const Reducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         shoppingBagList: action.content,
+      };
+    case 'SET_TOTAL_PRICE' : 
+      return {
+        ...state,
+        totalPrice: action.content,
+      };
+    case 'SET_TOTAL_COUNT' : 
+      return {
+        ...state,
+        totalMenuCount: action.content,
       };
     default: 
       return state;
