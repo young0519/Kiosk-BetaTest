@@ -19,6 +19,7 @@ const CardPaymentModal = () => {
   return (
     <md.CardpayContainer>
       <h1>카드 결제 (간편 결제)</h1>
+      <hr/>
       <div className="infoContainer">
         <div className="menuCount">
           <h3>선택메뉴</h3>

@@ -42,7 +42,7 @@ export const DetailMenuContainer = styled.div`
   justify-content : space-between;
   h2 {
     font-family : 'Pretendard-SemiBold';
-    font-size : 2.3rem;
+    font-size : 3rem;
   }
   .drink-detail {
     display : flex;
@@ -58,21 +58,22 @@ export const DetailMenuContainer = styled.div`
       display : flex;
       flex-direction : column;
       justify-content : space-between;
-      height : 20rem;
+      height : 22rem;
       width : 60rem;
       h1 {
         font-family : 'Pretendard-ExtraBold';
         color : ${props => props.theme.colors.blue1};
-        font-size : 3.5rem;
+        font-size : 4.2rem;
       }
       p {
-        font-size : 2rem;
+        font-size : 2.5rem;
         font-family : 'Pretendard-Light';
         letter-spacing : 0.03rem;
         height : 10rem;
         word-break : keep-all;
-        line-height : 3rem;
+        line-height : 3.5rem;
         &.count {
+          width : 3rem;
           font-size : 3rem;
           height : 3rem;
           margin : 0 4rem;
@@ -81,7 +82,7 @@ export const DetailMenuContainer = styled.div`
         }
       }
       h3 {
-        font-size : 2.3rem;
+        font-size : 3rem;
         color : ${props => props.theme.colors.gray4};
         font-family : 'Pretendard-SemiBold';
       }
@@ -114,7 +115,7 @@ export const DetailMenuContainer = styled.div`
       width : 8rem;
       height : 8rem;
     }
-    &:active {
+    &.active {
       background-color : ${props => props.theme.colors.blue1};
       color : ${props => props.theme.colors.colorBg};
 
@@ -370,7 +371,7 @@ export const PaymentSelectContainer = styled.div`
   }
   h1 {
     font-family : 'Pretendard-SemiBold';
-    font-size : 2.6rem;
+    font-size : 3rem;
   }
   .discount-option {
     width : 16rem;
@@ -418,27 +419,28 @@ export const PaymentSelectContainer = styled.div`
     align-items : center;
     justify-content : space-between;
     font-family : 'Pretendard-SemiBold';
-    font-size : 2.5rem;
+    font-size : 3rem;
+    margin-bottom : 2rem;
     .menuCount {
       display : flex;      
-      width : 26rem;
       justify-content:space-between;
       p{
-        width : 10rem;
         text-align : center;
         background-color: ${props => props.theme.colors.blue1};
         color: ${props => props.theme.colors.colorBg};
         border-radius : 1rem;
+        margin : 0 2rem;
+        padding : 0 5rem;
       }
     }
     .totalPrice {
       display : flex;
-      width : 40rem;
       justify-content:space-between;
       p{
-        width : 25rem;
         text-align : right;
-        color: ${props => props.theme.colors.blue1}
+        font-size : 3.2rem;
+        color: ${props => props.theme.colors.blue1};
+        margin : 0 1.5rem 0 8rem;
       }
     }
   }
@@ -461,41 +463,42 @@ export const CardpayContainer = styled.div`
   justify-content : space-between;
   h1 {
     font-family : 'Pretendard-SemiBold';
-    font-size : 2.6rem;
+    font-size : 3rem;
   }
+  hr{border: 0.1rem solid ${props => props.theme.colors.blue0}}
   .infoContainer {
     display : flex;
     align-items : center;
     justify-content : space-between;
     font-family : 'Pretendard-SemiBold';
-    font-size : 2.5rem;
+    font-size : 3rem;
     .menuCount {
       display : flex;      
-      width : 26rem;
       justify-content:space-between;
       p{
-        width : 10rem;
         text-align : center;
         background-color: ${props => props.theme.colors.blue1};
         color: ${props => props.theme.colors.colorBg};
         border-radius : 1rem;
+        margin : 0 2rem;
+        padding : 0 5rem;
       }
     }
     .totalPrice {
       display : flex;
-      width : 40rem;
       justify-content:space-between;
       p{
-        width : 25rem;
         text-align : right;
-        color: ${props => props.theme.colors.blue1}
+        font-size : 3.2rem;
+        color: ${props => props.theme.colors.blue1};
+        margin : 0 1.5rem 0 8rem;
       }
     }
   }
   button {
     height : 11rem;
     border : none;
-    font-size : 3rem;
+    font-size : 3.8rem;
     font-family : 'Pretendard-Bold';
     border-radius : 1rem;
     &.cancel {
