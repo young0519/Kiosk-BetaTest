@@ -3,7 +3,7 @@ import * as m from "../../styles/menuPageStyle"
 import { useEffect, useState } from "react";
 import menuData from "../../assets/menuList.json"
 
-function MenuCategory({setIsDetailMenuModal}) {
+function MenuCategory() {
   const [selectedTopCategory, setSelectedTopCategory] = useState('recommendedMenu');
   const [selectedSubCategory, setSelectedSubCategory] = useState('seasonalMenu');
 
@@ -72,7 +72,7 @@ function MenuCategory({setIsDetailMenuModal}) {
               key={index}
               name={item.name}
               price={item.price}
-              setIsDetailMenuModal={setIsDetailMenuModal}
+              explain={item.explain}
             />
           ))}
       </m.MenuItemContainer>

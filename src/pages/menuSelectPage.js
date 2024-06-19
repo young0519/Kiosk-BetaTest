@@ -18,7 +18,7 @@ function MenuSelect() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const [isDetailMenuModal, setIsDetailMenuModal] = useState(false);
+  let menuDetailModalState = useSelector( (state)=>{ return state.menuDetailModalState } );
   let checkMenuModalState = useSelector( (state)=>{ return state.checkMenuModalState } );
   let paymentSelectModalState = useSelector( (state)=>{ return state.paymentSelectModalState } );
   let cardPayModalState = useSelector( (state)=>{ return state.cardPayModalState } );
@@ -32,9 +32,9 @@ function MenuSelect() {
   return (
       <div>
         {
-          isDetailMenuModal &&
+          menuDetailModalState &&
           <md.ModalBackgroundContainer>
-            <DetailMenuModal setIsDetailMenuModal={setIsDetailMenuModal}/>
+            <DetailMenuModal/>
           </md.ModalBackgroundContainer>
         }
         {
@@ -63,7 +63,7 @@ function MenuSelect() {
         }
         <m.MenuSelectContainer>
           <LanguageSelect/>
-          <MenuCategory setIsDetailMenuModal={setIsDetailMenuModal}/>
+          <MenuCategory/>
           <div className="go_to_credit">
               <ShoppingBag/>
               <m.CurrentBagContainer>

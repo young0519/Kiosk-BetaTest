@@ -143,8 +143,10 @@ export const DetailMenuContainer = styled.div`
   }
   .total-price {
     margin-left : auto;
-    font-size : 3rem;
+    font-size : 4.2rem;
+    font-family : 'Pretendard-SemiBold';
     p {
+      font-family : 'Pretendard-Bold';
       display : inline-block;
       color : ${props => props.theme.colors.blue1};
       width : 20rem;
@@ -160,8 +162,8 @@ export const DetailMenuContainer = styled.div`
       width : 39rem;
       height : 13rem;
       border: none;
-      font-size : 3rem;
-      font-family : 'Pretendard-SemiBold';
+      font-size : 3.9rem;
+      font-family : 'Pretendard-Bold';
       border-radius : 1.5rem;
       background-color : ${props => props.theme.colors.gray1};
       &.order {
@@ -251,8 +253,8 @@ export const DetailOptionContainer = styled.div`
     align-items : center;
     justify-content : space-between;
     button {
-      width : 39rem;
-      height : 8rem;
+      width : 38rem;
+      height : 8.5rem;
       border : none;
       border-radius : 1rem;
       font-size : 3rem;

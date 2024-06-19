@@ -3,6 +3,7 @@ import One_shot from "../../assets/imgs/one_shot.png"
 import Two_shot from "../../assets/imgs/two_shot.png"
 import Light_drink from "../../assets/imgs/light_drink.png"
 import blank_img from "../../assets/imgs/gray_color_bg.png"
+import dark_blank_img from "../../assets/imgs/dark_gray_bg.jpeg"
 
 const DetailOptionModal = ({setIsDetailOptionModal}) => {
 
@@ -12,7 +13,7 @@ const DetailOptionModal = ({setIsDetailOptionModal}) => {
 
   return (
     <md.DetailOptionContainer>
-      <h1>음료 제조 방식을 선택해주세요.</h1>
+      <h1 className="title">음료 제조 방식을 선택해주세요.</h1>
       <h1>샷 추가</h1>
       <div style={{display:'flex',  justifyContent:'start', alignItems:'center'}}>
         <div className="shot-option">
@@ -34,12 +35,12 @@ const DetailOptionModal = ({setIsDetailOptionModal}) => {
       <h1>시럽 추가</h1>
       <div style={{display:'flex',  justifyContent:'start', alignItems:'center'}}>
         <div className="syrup-option">
-          <img src={blank_img} alt="2샷 추가"/>
+          <img src={dark_blank_img} alt="2샷 추가"/>
           <h1>시럽 추가</h1>
           <h3>+ 200원</h3>
         </div>
         <div className="syrup-option">
-          <img src={blank_img} alt="2샷 추가"/>
+          <img src={dark_blank_img} alt="2샷 추가"/>
           <h1>저당 스테비아 추가</h1>
           <h3>+ 600원</h3>
         </div>
