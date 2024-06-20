@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import PaymentSelectModal from "../components/paymentSelectModal";
 import CardPaymentModal from "../components/cardPaymentModal";
 import { useDispatch, useSelector } from "react-redux";
-import { SetTotalMenuModal } from "../redux/kioskAction";
+import { SetTotalCount, SetTotalMenuModal, SetTotalPrice } from "../redux/kioskAction";
 import ReceiptModal from "../components/receiptModal";
 
 
@@ -25,10 +25,24 @@ function MenuSelect() {
   let receiptModalState = useSelector( (state)=>{ return state.receiptModalState } );
   let totalMenuCount = useSelector((state) => state.totalMenuCount);
   let totalPrice = useSelector((state) => state.totalPrice);
+  const shoppingBagList = useSelector((state) => state.shoppingBagList);
+
+  useEffect(() => {
+    const updateTotalInfo = () => {
+      const totalQuantity = shoppingBagList.reduce((acc, item) => acc + item.quantity, 0);
+      const totalPriceValue = shoppingBagList.reduce((acc, item) => acc + item.totalPrice, 0);
+      dispatch(SetTotalCount(totalQuantity));
+      dispatch(SetTotalPrice(totalPriceValue));
+    };
+    updateTotalInfo();
+  }, [shoppingBagList, dispatch]);
+
+  
 
   const moveToCheckMenu = () => {
     dispatch(SetTotalMenuModal(true));
   }
+  
 
   return (
       <div>

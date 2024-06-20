@@ -72,8 +72,7 @@ function DetailMenuModal() {
 
   useEffect(()=> {
     const totalPrice = quantity*menuInfoList.menuPrice;
-    const totalFormattedPrice = totalPrice.toLocaleString('ko-KR');
-    setTotalPrice(totalFormattedPrice);
+    setTotalPrice(totalPrice);
   }, [quantity]);
 
   return (
@@ -132,7 +131,7 @@ function DetailMenuModal() {
             음료 제조 방식 선택<img src={right_arrow}/>
           </button>
           <hr/>
-          <h1 className="total-price">총 금액<p className="total-price-focus">{totalPrice}</p>원</h1>
+          <h1 className="total-price">총 금액<p className="total-price-focus">{totalPrice.toLocaleString('ko-KR')}</p>원</h1>
           <div className="btnBox">
             <button 
               className="cancel" 

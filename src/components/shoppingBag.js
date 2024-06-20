@@ -59,7 +59,7 @@ function ShoppingBag() {
               <img className="updown-btn" src={increase_btn} onClick={() => handleQuantityIncrement(index)} alt="증가" />
             </div>
           </div>
-          <span>{item.totalPrice}</span>
+          <span>{item.totalPrice.toLocaleString('ko-KR')}</span>
           <img src={delete_img} alt="메뉴 삭제 버튼" onClick={() => handleDelete(index)} />
         </m.SmallShoppingItem>
       ))}
