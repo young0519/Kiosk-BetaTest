@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import * as md from "../styles/modalStyle";
-import { SetReceiptModal } from "../redux/kioskAction";
+import { SetPayListInfo, SetReceiptModal, SetTotalCount, SetTotalPrice } from "../redux/kioskAction";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -10,10 +10,21 @@ const ReceiptModal = () => {
   const [countdown, setCountdown] = useState(9);
 
   const NoReceipt = () => {
+    dispatch(SetPayListInfo([]));
+    dispatch(SetTotalPrice(0));
+    dispatch(SetTotalCount(0));
     dispatch(SetReceiptModal(false));
     navigate('/');
   }
 
+  const ReceiptPrint = () => {
+    dispatch(SetPayListInfo([]));
+    dispatch(SetTotalPrice(0));
+    dispatch(SetTotalCount(0));
+    dispatch(SetReceiptModal(false));
+    navigate('/');
+  }
+  
   useEffect(() => {
     const timer = setInterval(() => {
       setCountdown((prevCount) => prevCount - 1);
@@ -26,11 +37,6 @@ const ReceiptModal = () => {
 
     return () => clearInterval(timer);
   }, [countdown, NoReceipt]);
-
-  const ReceiptPrint = () => {
-    dispatch(SetReceiptModal(false));
-    navigate('/');
-  }
 
   return (
     <md.ReceiptModalContainer>
