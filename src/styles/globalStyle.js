@@ -59,6 +59,11 @@ const GlobalStyle = createGlobalStyle`
     font-size : 62.5% // 1rem = 10px
   }
 }
+@media (min-width: 600px) and (max-width : 799px) {
+  html {
+    font-size : 45.5%;  // 1rem = 10px
+  }
+}
 
 body {
   font-family : 'Pretendard-Medium';
@@ -69,6 +74,11 @@ body {
   list-style : none;
   height : 100vh;
   justify-content: center;
+  align-items : center;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 `;
 

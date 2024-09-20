@@ -13,6 +13,7 @@ function App() {
           <Routes>       
             <Route path='/' element={<KioskMain />} />
             <Route path='/menu' element={<MenuSelect />} />
+            <Route path='/menu/app' element={<MenuSelect />} />
           </Routes>
       </ThemeProvider> 
     </BrowserRouter>

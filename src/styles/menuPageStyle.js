@@ -3,6 +3,7 @@ import styled from "styled-components";
 // 전체 페이지 레이아웃
 export const MenuSelectContainer = styled.div`
   width : 100vw;
+  height : 100vh;
   .go_to_credit {
     width : 100%;
     height : 35rem;
@@ -69,21 +70,23 @@ export const SubCategoryBtn = styled.button`
 // 전체 메뉴 보여주기 레이아웃
 export const MenuItemContainer = styled.div`
   width: 95%;
-  height: 89.85rem;
+  height: 116.6rem;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-template-rows: repeat(3, 1fr);
   place-items: center;
   row-gap: 3rem;
-  column-gap: 2.3rem;
   margin-top: 2rem;
   overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `
 
 // 메뉴 Item 레이아웃
 export const MenuItemBox = styled.div`
-  width : 21rem;
+  width : 23rem;
   height : 29rem;
   display : flex;
   flex-direction : column;
@@ -97,7 +100,7 @@ export const MenuItemBox = styled.div`
     border-radius : 1rem;
   }
   h1 {
-    width : 24rem;
+    width : 22.5rem;
     text-align : center;
     margin-top : 1.4rem;
     margin-bottom : 0.7rem;
@@ -112,7 +115,7 @@ export const MenuItemBox = styled.div`
 
 // 작은 장바구니 UI
 export const SmallShoppingBag = styled.div`
-  width : 65.6rem;
+  width : 55.6rem;
   height : 33rem;
   border-radius : 1rem;
   background-color : ${props => props.theme.colors.colorBg};
@@ -120,7 +123,7 @@ export const SmallShoppingBag = styled.div`
 `
 // 장바구니 짧은 ITEM UI
 export const SmallShoppingItem = styled.div`
-  width : 60rem;
+  width : 100%;
   height : 4.9rem;
   display : flex;
   align-items : center;

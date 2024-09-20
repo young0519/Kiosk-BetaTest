@@ -135,6 +135,7 @@ export const DetailMenuContainer = styled.div`
     color : ${props => props.theme.colors.blue1};
     border-radius : 10rem;
     font-size : 2.5rem;
+    font-family : 'Pretendard-SemiBold';
     background-color : ${props => props.theme.colors.colorBg};
     img {
       width : 4rem;

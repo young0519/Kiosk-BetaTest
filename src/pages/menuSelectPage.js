@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import PaymentSelectModal from "../components/paymentSelectModal";
 import CardPaymentModal from "../components/cardPaymentModal";
 import { useDispatch, useSelector } from "react-redux";
-import { SetTotalCount, SetTotalMenuModal, SetTotalPrice } from "../redux/kioskAction";
+import { SetPayListInfo, SetTotalCount, SetTotalMenuModal, SetTotalPrice } from "../redux/kioskAction";
 import ReceiptModal from "../components/receiptModal";
 
 
@@ -41,6 +41,14 @@ function MenuSelect() {
 
   const moveToCheckMenu = () => {
     dispatch(SetTotalMenuModal(true));
+  }
+
+  const moveToMain = () => {
+    dispatch(SetPayListInfo([]));
+    dispatch(SetTotalPrice(0));
+    dispatch(SetTotalCount(0));
+    navigate('/');
+
   }
   
 
@@ -92,7 +100,7 @@ function MenuSelect() {
                 </button>
                 <button 
                   className="backBtn"
-                  onClick={()=> navigate('/')}
+                  onClick={moveToMain}
                 >
                   처음부터 다시하기
                 </button>

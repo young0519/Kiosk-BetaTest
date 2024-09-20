@@ -25,6 +25,7 @@ export const startBtnContainer = styled.div `
       color : ${props => props.theme.colors.colorBg};
       border : none;
       border-radius : 3rem;
+      cursor : pointer;
     }
 `
 
