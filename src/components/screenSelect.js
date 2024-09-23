@@ -13,10 +13,10 @@ function ScreenSelect() {
   useEffect(() => {
     // 현재 URL에 따라 selectedScreen 상태 설정
     switch (location.pathname) {
-      case '/':
+      case '/basic':
         setSelectedScreen('basic');
         break;
-      case '/menu':
+      case '/basic/menu':
         setSelectedScreen('basic');
         break;
       case '/low':

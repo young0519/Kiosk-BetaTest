@@ -5,8 +5,12 @@ import { Provider } from 'react-redux';
 import store from './store';
 import axios  from 'axios';
 
-axios.defaults.baseURL = "http://3.38.96.102:3000";
+axios.defaults.baseURL = "http://3.34.245.45:3000";
 axios.defaults.withCredentials = true;
+
+// 새로운 서버 설정 (예: raymondcty 서버)
+const additionalBaseURL = "http://raymondcty.duckdns.org:6133";
+axios.defaults.additionalBaseURL = additionalBaseURL; // 추가 서버를 위해 설정합니다.
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

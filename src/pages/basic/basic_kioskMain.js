@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import * as m from "../styles/basic/mainPageBasicStyle";
-import LanguageSelect from "../components/languageSelect";
-import wow_img from "../assets/imgs/wowImg.png"
+import * as m from "../../styles/basic/mainPageBasicStyle";
+import LanguageSelect from "../../components/languageSelect";
+import wow_img from "../../assets/imgs/wowImg.png"
 import axios from "axios";
-import ScreenSelect from "../components/screenSelect";
+import ScreenSelect from "../../components/screenSelect";
 
 
 function KioskMain() {
@@ -16,7 +16,7 @@ function KioskMain() {
       // response 데이터의 topCategories를 localStorage에 저장
       localStorage.setItem('menuData', JSON.stringify(response.data));
       
-      navigate("/menu");
+      navigate("/basic/menu");
     })
     .catch(error => {
       console.error(error);

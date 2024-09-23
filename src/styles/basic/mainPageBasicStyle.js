@@ -1,5 +1,34 @@
 import styled from "styled-components";
 
+export const KioskStartContainer = styled.div`
+    width : 100vw;
+    height : 100vh;
+    display : flex;
+    flex-direction : column;
+    justify-content : space-between;
+    align-items : center;
+    background-color : ${props => props.theme.colors.colorBg};
+    p {
+      margin : 0 3rem;
+      font-size : 8rem;
+      line-height : 11rem;
+      text-align: center;
+      span {
+        color : ${props => props.theme.colors.blue1};
+      }
+    }
+    button {
+      width : 47.7rem;
+      height : 27.4rem;
+      font-size : 6rem;
+      background : ${props => props.theme.colors.blue1};
+      color : ${props => props.theme.colors.colorBg};
+      border : none;
+      border-radius : 3rem;
+      cursor : pointer;
+      margin-bottom : 20rem;
+    }
+`
 export const KioskMainContainer = styled.div`
     width : 100vw;
     height : 100vh;
