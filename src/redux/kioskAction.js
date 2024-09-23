@@ -1,4 +1,12 @@
 // 상세 메뉴 모달 여부 저장하는 action
+export const SetScreenState = (content) => {
+  return {
+    type : 'SET_SCREEN_STATE',
+    content
+  }
+}
+
+// 상세 메뉴 모달 여부 저장하는 action
 export const SetMenuDetailModal = (content) => {
   return {
     type : 'SET__MENU_DETAIL_MODAL',

@@ -3,6 +3,7 @@ import * as m from "../styles/mainPageStyle";
 import LanguageSelect from "../components/languageSelect";
 import wow_img from "../assets/imgs/wowImg.png"
 import axios from "axios";
+import ScreenSelect from "../components/screenSelect";
 
 
 function KioskMain() {
@@ -24,7 +25,10 @@ function KioskMain() {
   
   return (
     <m.KioskMainContainer>
-      <LanguageSelect/>
+      <m.MenuHeader>
+        <ScreenSelect/>
+        <LanguageSelect/>
+      </m.MenuHeader>
       <img src={wow_img}/>
       <h1>HOIKS</h1>
       <m.startBtnContainer >

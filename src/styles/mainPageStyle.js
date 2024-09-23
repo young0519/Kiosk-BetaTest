@@ -28,6 +28,13 @@ export const startBtnContainer = styled.div `
       cursor : pointer;
     }
 `
+export const MenuHeader = styled.div`
+    width : 100vw;
+    height : 5rem;
+    display : flex;
+    justify-content : space-around;
+    align-items: end;
+`
 
 export const languageBox = styled.div`
   width: 100%;

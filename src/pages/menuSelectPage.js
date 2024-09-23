@@ -1,6 +1,7 @@
 import ShoppingBag from "../components/shoppingBag";
 import MenuCategory from "../components/menu/menuCategory";
 import LanguageSelect from "../components/languageSelect";
+import * as main from "../styles/mainPageStyle";
 import * as m from "../styles/menuPageStyle";
 import * as md from "../styles/modalStyle";
 import DetailMenuModal from "../components/menu/detailMenuModal";
@@ -12,6 +13,7 @@ import CardPaymentModal from "../components/cardPaymentModal";
 import { useDispatch, useSelector } from "react-redux";
 import { SetPayListInfo, SetTotalCount, SetTotalMenuModal, SetTotalPrice } from "../redux/kioskAction";
 import ReceiptModal from "../components/receiptModal";
+import ScreenSelect from "../components/screenSelect";
 
 
 function MenuSelect() {
@@ -85,7 +87,10 @@ function MenuSelect() {
           </md.ModalTopBackgroundContainer>
         }
         <m.MenuSelectContainer>
-          <LanguageSelect/>
+          <main.MenuHeader>
+            <ScreenSelect/>
+            <LanguageSelect/>
+          </main.MenuHeader>
           <MenuCategory/>
           <div className="go_to_credit">
               <ShoppingBag/>
