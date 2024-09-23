@@ -81,7 +81,7 @@ function DetailMenuModal() {
           <h2>세부사항을 선택해주세요.</h2>
           <div className="drink-detail">
             <img 
-              src={gray_color_bg} 
+              src={menuInfoList.menuPhotoUrl} 
               alt="임시 사진"
             />
             <div className="drink-text">

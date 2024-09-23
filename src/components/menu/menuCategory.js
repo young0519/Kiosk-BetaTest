@@ -4,35 +4,45 @@ import { useEffect, useState } from "react";
 import menuData from "../../assets/menuList.json"
 
 function MenuCategory() {
-  const [selectedTopCategory, setSelectedTopCategory] = useState('recommendedMenu');
-  const [selectedSubCategory, setSelectedSubCategory] = useState('seasonalMenu');
+  const [selectedTopCategory, setSelectedTopCategory] = useState('');
+  const [selectedSubCategory, setSelectedSubCategory] = useState('');
+  // localStorage에서 menuData 가져오기
+  const menuListData = JSON.parse(localStorage.getItem('menuData'));
 
   useEffect(() => {
     // 초기 선택 상태 설정
     setSelectedTopCategory('recommendedMenu');
     setSelectedSubCategory('seasonalMenu');
+
+    // 초기 선택 상태 설정
+    const firstTopCategory = menuListData.topCategories[0];
+    setSelectedTopCategory(firstTopCategory.name);
+    
+    // 첫 번째 서브 카테고리 설정
+    if (firstTopCategory.subCategories.length > 0) {
+      setSelectedSubCategory(firstTopCategory.subCategories[0].name);
+    }
   }, []);
+
+  // 기본 SubCategory 선택
   const handleTopCategoryClick = (topCategory) => {
-    setSelectedTopCategory(topCategory);
-    if(topCategory === 'recommendedMenu') {
-      setSelectedSubCategory('seasonalMenu');
-    }
-    if(topCategory === 'coffee') {
-      setSelectedSubCategory('espresso');
-    }
-    if(topCategory === 'beverages') {
-      setSelectedSubCategory('ade');
-    }
-    if(topCategory === 'food') {
-      setSelectedSubCategory('dessert');
-    }
-    if(topCategory === 'md') {
-      setSelectedSubCategory('coffeeMd');
+    setSelectedTopCategory(topCategory.name);
+    // 기본 SubCategory 선택 설정
+    if (topCategory.name === '추천메뉴') {
+      setSelectedSubCategory('시즌 메뉴');
+    } else if (topCategory.name === '커피') {
+      setSelectedSubCategory('에스프레소');
+    } else if (topCategory.name === '음료') {
+      setSelectedSubCategory('에이드');
+    } else if (topCategory.name === '음식') {
+      setSelectedSubCategory('디저트');
+    } else if (topCategory.name === 'MD') {
+      setSelectedSubCategory('커피');
     }
   };
 
   const handleSubCategoryClick = (subCategory) => {
-    setSelectedSubCategory(subCategory);
+    setSelectedSubCategory(subCategory.name);
   };
 
 
@@ -41,22 +51,22 @@ function MenuCategory() {
     <div style={{ width: '100%' }}>
       {/* 메뉴 선택 */}
       <m.TopCategoryBox className="topCategory">
-        {menuData.topCategories.map((topCategory) => (
+        {menuListData.topCategories.map((topCategory) => (
           <m.TopCategoryBtn
-            key={topCategory.className}
-            className={`${topCategory.className} ${selectedTopCategory === topCategory.className ? 'active' : ''}`}
-            onClick={() => handleTopCategoryClick(topCategory.className)}
+            key={topCategory.id}
+            className={`${selectedTopCategory === topCategory.name ? 'active' : ''}`}
+            onClick={() => handleTopCategoryClick(topCategory)}
           >
             {topCategory.name}
           </m.TopCategoryBtn>
         ))}
       </m.TopCategoryBox>
       <m.SubCategoryBox className="subCategory">
-        {menuData.topCategories.find((tc) => tc.className === selectedTopCategory)?.subCategories.map((subCategory) => (
+        {menuListData.topCategories.find((tc) => tc.name === selectedTopCategory)?.subCategories.map((subCategory) => (
           <m.SubCategoryBtn
-            key={subCategory.className}
-            className={`${subCategory.className} ${selectedSubCategory === subCategory.className ? 'active' : ''}`}
-            onClick={() => handleSubCategoryClick(subCategory.className)}
+            key={subCategory.id}
+            className={`${selectedSubCategory === subCategory.name ? 'active' : ''}`}
+            onClick={() => handleSubCategoryClick(subCategory)}
           >
             {subCategory.name}
           </m.SubCategoryBtn>
@@ -64,15 +74,16 @@ function MenuCategory() {
       </m.SubCategoryBox>
       {/* 상세 메뉴 종류 */}
       <m.MenuItemContainer>
-      {menuData.topCategories
-          .find((tc) => tc.className === selectedTopCategory)
-          ?.subCategories.find((sc) => sc.className === selectedSubCategory)
+      {menuListData.topCategories
+          .find((tc) => tc.name === selectedTopCategory)
+          ?.subCategories.find((sc) => sc.name === selectedSubCategory)
           ?.items?.map((item, index) => (
             <MenuItem
-              key={index}
+              key={item.id}
               name={item.name}
               price={item.price}
-              explain={item.explain}
+              explain={item.info}
+              photoUrl={item.photoUrl}
             />
           ))}
       </m.MenuItemContainer>
