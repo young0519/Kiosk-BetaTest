@@ -52,13 +52,15 @@ export const SubCategoryBox = styled.div`
   margin-top : 2rem;
   display : grid;
   grid-template-columns : repeat(5, 1fr);
-  margin-left : 5.4rem;
+  align-items : center;
+  justify-content : center;
   
 `
 // 하위 카테고리 메뉴 버튼 UI
 export const SubCategoryBtn = styled.button`
     height : 4rem;
-    width : 15rem;
+    width : 15.2rem;
+    margin : 0 auto;
     font-size : 2.5rem;
     font-family : 'Pretendard-SemiBold';
     border : none;
