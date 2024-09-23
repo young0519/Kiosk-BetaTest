@@ -1,22 +1,22 @@
-import ShoppingBag from "../components/shoppingBag";
-import MenuCategory from "../components/menu/menuCategory";
-import LanguageSelect from "../components/languageSelect";
-import * as main from "../styles/mainPageStyle";
-import * as m from "../styles/menuPageStyle";
-import * as md from "../styles/modalStyle";
-import DetailMenuModal from "../components/menu/detailMenuModal";
-import MenuCheckModal from "../components/menu/menuCheckModal";
+import ShoppingBag from "../../components/shoppingBag";
+import MenuCategory from "../../components/menu/menuCategory";
+import LanguageSelect from "../../components/languageSelect";
+import * as main from "../../styles/mainPageStyle";
+import * as m from "../../styles/menuPageStyle";
+import * as md from "../../styles/modalStyle";
+import DetailMenuModal from "../../components/menu/detailMenuModal";
+import MenuCheckModal from "../../components/menu/menuCheckModal";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import PaymentSelectModal from "../components/paymentSelectModal";
-import CardPaymentModal from "../components/cardPaymentModal";
+import PaymentSelectModal from "../../components/paymentSelectModal";
+import CardPaymentModal from "../../components/cardPaymentModal";
 import { useDispatch, useSelector } from "react-redux";
-import { SetPayListInfo, SetTotalCount, SetTotalMenuModal, SetTotalPrice } from "../redux/kioskAction";
-import ReceiptModal from "../components/receiptModal";
-import ScreenSelect from "../components/screenSelect";
+import { SetPayListInfo, SetTotalCount, SetTotalMenuModal, SetTotalPrice } from "../../redux/kioskAction";
+import ReceiptModal from "../../components/receiptModal";
+import ScreenSelect from "../../components/screenSelect";
 
 
-function MenuSelect() {
+function LowVersionMenuSelect() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -49,7 +49,7 @@ function MenuSelect() {
     dispatch(SetPayListInfo([]));
     dispatch(SetTotalPrice(0));
     dispatch(SetTotalCount(0));
-    navigate('/');
+    navigate('/low');
 
   }
   
@@ -116,4 +116,4 @@ function MenuSelect() {
   )
 }
 
-export default MenuSelect;
+export default LowVersionMenuSelect;
