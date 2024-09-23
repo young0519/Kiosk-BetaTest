@@ -14,20 +14,14 @@ function ScreenSelect() {
     // 현재 URL에 따라 selectedScreen 상태 설정
     switch (location.pathname) {
       case '/basic':
-        setSelectedScreen('basic');
-        break;
       case '/basic/menu':
         setSelectedScreen('basic');
         break;
       case '/low':
-        setSelectedScreen('low');
-        break;
       case '/low/menu':
         setSelectedScreen('low');
         break;
       case '/text':
-        setSelectedScreen('text');
-        break;
       case '/text/menu':
         setSelectedScreen('text');
         break;
@@ -41,19 +35,37 @@ function ScreenSelect() {
     setSelectedScreen(Screen);
     dispatch(SetScreenState(Screen));
 
-    // 언어에 따라 다른 링크로 이동
-    switch(Screen) {
-      case 'basic':
-        navigate('/'); // 기본 링크
-        break;
-      case 'low':
-        navigate('/low'); // 저자세 링크
-        break;
-      case 'text':
-        navigate('/text'); // 텍스트 강화 링크
-        break;
-      default:
-        break;
+    // URL에 따라 다른 링크로 이동
+    if (location.pathname.includes('/menu')) {
+      // /menu가 포함된 경우
+      switch(Screen) {
+        case 'basic':
+          navigate('/basic/menu'); // 기본 메뉴 링크
+          break;
+        case 'low':
+          navigate('/low/menu'); // 저자세 메뉴 링크
+          break;
+        case 'text':
+          navigate('/text/menu'); // 텍스트 강화 메뉴 링크
+          break;
+        default:
+          break;
+      }
+    } else {
+      // /menu가 포함되지 않은 경우
+      switch(Screen) {
+        case 'basic':
+          navigate('/basic'); // 기본 링크
+          break;
+        case 'low':
+          navigate('/low'); // 저자세 링크
+          break;
+        case 'text':
+          navigate('/text'); // 텍스트 강화 링크
+          break;
+        default:
+          break;
+      }
     }
   };
 
