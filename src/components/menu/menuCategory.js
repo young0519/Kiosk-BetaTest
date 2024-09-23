@@ -1,7 +1,6 @@
 import MenuItem from "./menuItem";
 import * as m from "../../styles/menuPageStyle"
 import { useEffect, useState } from "react";
-import menuData from "../../assets/menuList.json"
 
 function MenuCategory() {
   const [selectedTopCategory, setSelectedTopCategory] = useState('');

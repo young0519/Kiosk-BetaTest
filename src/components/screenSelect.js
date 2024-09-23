@@ -58,7 +58,7 @@ function ScreenSelect() {
   };
 
   return (
-    <k.languageBox>
+    <k.ScreenBox>
       <button
         className={`ko ${selectedScreen === 'basic' ? 'active' : ''}`}
         onClick={() => handleScreenClick('basic')}
@@ -77,7 +77,7 @@ function ScreenSelect() {
       >
         텍스트 강화
       </button>
-    </k.languageBox>
+    </k.ScreenBox>
   );
 }
 
