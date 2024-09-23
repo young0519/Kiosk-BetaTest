@@ -7,20 +7,24 @@ export const KioskMainContainer = styled.div`
     flex-direction : column;
     justify-content : space-between;
     align-items : center;
+    background-color : ${props => props.theme.colors.colorBg};
     h1 {
       font-size : 10rem;
     }
 `
 export const startBtnContainer = styled.div `
     width : 100%;
+    height : 95vh;
     display : flex;
-    justify-content : space-around;
-    align-items: end;
-    margin : 0 0 13rem 0;
+    flex-direction : column;
+    justify-content : center;
+    align-items: center;
+    margin-top : 15rem;
     button {
-      width : 47.7rem;
-      height : 27.4rem;
-      font-size : 6rem;
+      margin : 0 0 10rem 0;
+      width : 86.904rem;
+      height : 49.92rem;
+      font-size : 12rem;
       background : ${props => props.theme.colors.blue1};
       color : ${props => props.theme.colors.colorBg};
       border : none;

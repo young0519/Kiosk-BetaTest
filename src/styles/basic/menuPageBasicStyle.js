@@ -164,18 +164,18 @@ export const SmallShoppingItem = styled.div`
 // 큰 장바구니 UI
 export const BigShoppingBag = styled.div`
   width : 80.8rem;
-  height : 80rem;
+  height : 70rem;
   border-radius : 1rem;
   background-color : ${props => props.theme.colors.colorBg};
 `
 // 장바구니 큰 ITEM UI
 export const BigShoppingItem = styled.div`
   width : 80.8rem;
-  height : 4.9rem;
+  height : 7.9rem;
   display : flex;
   align-items : center;
   justify-content : space-between;
-  font-size : 2.5rem;
+  font-size : 3.7rem;
   font-family : 'Pretendard-Medium';
   padding : 0 2rem;
   border-radius : 1rem;

@@ -41,35 +41,30 @@ export const DetailMenuContainer = styled.div`
   flex-direction : column;
   justify-content : space-between;
   h2 {
-    font-family : 'Pretendard-SemiBold';
-    font-size : 3rem;
+    font-family : 'Pretendard-Bold';
+    font-size : 4.3rem;
   }
   .drink-detail {
     display : flex;
     height : 25rem;
     align-items : center;
     justify-content : space-between;
-    img {
-      width : 18rem;
-      height : 23rem;
-      margin : 0 3rem 0 0;
-    }
     .drink-text {
       display : flex;
       flex-direction : column;
       justify-content : space-between;
-      height : 22rem;
-      width : 60rem;
+      height : 20rem;
+      width : 80rem;
       h1 {
         font-family : 'Pretendard-ExtraBold';
         color : ${props => props.theme.colors.blue1};
-        font-size : 4.2rem;
+        font-size : 4.8rem;
       }
       p {
-        font-size : 2.5rem;
+        font-size : 3rem;
         font-family : 'Pretendard-Light';
         letter-spacing : 0.03rem;
-        height : 10rem;
+        height : 6rem;
         word-break : keep-all;
         line-height : 3.5rem;
         &.count {
@@ -99,22 +94,19 @@ export const DetailMenuContainer = styled.div`
   }
   hr{border: 0.1rem solid ${props => props.theme.colors.blue0}}
   .drink-option {
-    width : 16rem;
-    height : 14.6rem;
+    width : 23rem;
+    height : 9rem;
     display : flex;
     flex-direction : column;
     align-items : center;
-    justify-content : space-between;
+    justify-content : center;
     padding : 1rem;
-    margin : 0 3rem 0 0;
+    margin : 0 3rem 4rem 0;
     border : none;
     border-radius : 1.5rem;
     background-color : ${props => props.theme.colors.gray1};
-    font-size : 3rem;
-    img {
-      width : 8rem;
-      height : 8rem;
-    }
+    font-size : 4.8rem;
+    font-family : 'Pretendard-Bold';
     &.active {
       background-color : ${props => props.theme.colors.blue1};
       color : ${props => props.theme.colors.colorBg};
@@ -128,13 +120,13 @@ export const DetailMenuContainer = styled.div`
     display : flex;
     align-items : center;
     justify-content : space-around;
-    width : 27rem;
-    height : 5rem;
+    width : 35.7rem;
+    height : 6.7rem;
     padding : 0 0.5rem;
-    border : 0.3rem solid ${props => props.theme.colors.blue1};
+    border : 0.456rem solid ${props => props.theme.colors.blue1};
     color : ${props => props.theme.colors.blue1};
     border-radius : 10rem;
-    font-size : 2.5rem;
+    font-size : 3.42rem;
     font-family : 'Pretendard-SemiBold';
     background-color : ${props => props.theme.colors.colorBg};
     img {
@@ -296,11 +288,13 @@ export const MenuCheckContainer = styled.div`
   justify-content : space-between;
   h1 {
     margin : 2rem 0 0rem 0;
-    font-size : 3rem;
-    font-family : 'Pretendard-SemiBold';
+    font-size : 4.8rem;
+    font-family : 'Pretendard-Bold';
     letter-spacing : 0.1rem;
-    height : 4rem;
+    height : 6rem;
     &.colored {
+      font-family : 'Pretendard-SemiBold';
+      font-size : 3.6rem;
       margin : 0 0 1rem 0;
       color: ${props => props.theme.colors.blue2}
     }
@@ -311,7 +305,7 @@ export const MenuCheckContainer = styled.div`
     align-items : center;
     justify-content : space-between;
     font-family : 'Pretendard-SemiBold';
-    font-size : 3rem;
+    font-size : 4rem;
     .menuCount {
       display : flex;      
       justify-content:space-between;
@@ -329,7 +323,7 @@ export const MenuCheckContainer = styled.div`
       justify-content:space-between;
       p{
         text-align : right;
-        font-size : 3.2rem;
+        font-size : 4rem;
         color: ${props => props.theme.colors.blue1};
         margin : 0 1.5rem 0 8rem;
       }
@@ -343,23 +337,23 @@ export const MenuCheckContainer = styled.div`
     align-items: center;
     button {
       font-family : 'Pretendard-Bold';
-      font-size : 3.8rem;
+      font-size : 4.8rem;
       height : 100%;
       border : none;
       border-radius : 1rem;
       &.cancel{
-        width : 13rem;
+        width : 11.3rem;
         background-color : ${props => props.theme.colors.gray1}
         cursor : pointer;
       }
       &.here{
-        width : 32rem;
+        width : 31.4rem;
         background-color : ${props => props.theme.colors.blue1};
         color : ${props => props.theme.colors.colorBg};
         cursor : pointer;
       }
       &.togo{
-        width : 32rem;
+        width : 31.4rem;
         background-color : ${props => props.theme.colors.blue0};
         cursor : pointer;
       }
@@ -391,10 +385,11 @@ export const PaymentSelectContainer = styled.div`
   }
   h1 {
     font-family : 'Pretendard-SemiBold';
-    font-size : 3rem;
+    font-size : 4.8rem;
     margin-bottom : 2rem;
     &.payInfo {
-      margin-bottom : 0rem;
+      font-size : 3.898rem;
+      margin-bottom : 2rem;
     }
   }
   .discount-option {
@@ -491,7 +486,7 @@ export const CardpayContainer = styled.div`
   justify-content : space-between;
   h1 {
     font-family : 'Pretendard-SemiBold';
-    font-size : 3rem;
+    font-size : 4.8rem;
   }
   hr{border: 0.1rem solid ${props => props.theme.colors.blue0}}
   .infoContainer {
@@ -571,7 +566,7 @@ export const ReceiptModalContainer = styled.div`
   align-items : center;
   h1 {
     font-family : 'Pretendard-SemiBold';
-    font-size : 3.5rem;
+    font-size : 4.8rem;
     margin : 1.5rem 0;
   }
   .btnBox {
@@ -583,7 +578,7 @@ export const ReceiptModalContainer = styled.div`
     button {
       width : 35rem;
       height : 15rem;
-      font-size : 3.8rem;
+      font-size : 4.8rem;
       font-family : 'Pretendard-SemiBold';
       letter-spacing : 0.15rem;
       border : none;

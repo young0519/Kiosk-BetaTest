@@ -1,4 +1,4 @@
-import * as md from "../../styles/modalStyle"
+import * as md from "../../styles/text/modalTextStyle"
 import blank_img from "../../assets/imgs/gray_color_bg.png"
 import credit_card from "../../assets/imgs/credit-card.png"
 import coupon from "../../assets/imgs/coupon.png"
@@ -51,7 +51,7 @@ const PaymentSelectModal = () => {
         onClick={moveToBack}
         src={quit_btn} alt="닫기"
       />
-      <h1>결제 수단을 선택해주세요.</h1>
+      <h1>결제 수단</h1>
       <h1 className="payInfo">1. 제휴 할인 선택</h1>
       <div style={{display:'flex', alignItems:'center', justifyContent:'start'}}>
         <button 

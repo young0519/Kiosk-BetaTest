@@ -29,9 +29,7 @@ function TextVersionKioskMain() {
         <ScreenSelect/>
         <LanguageSelect/>
       </m.MenuHeader>
-      <img src={wow_img}/>
-      <h1>HOIKS</h1>
-      <m.startBtnContainer >
+      <m.startBtnContainer>
         <button 
           onClick={moveToMenu}
         >매장 식사</button>

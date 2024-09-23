@@ -1,4 +1,4 @@
-import * as md from "../../styles/modalStyle"
+import * as md from "../../styles/text/modalTextStyle"
 import card_pay from "../../assets/imgs/card_pay.png"
 import { useDispatch, useSelector } from "react-redux"
 import { SetCardPayModal, SetPaymentModal, SetReceiptModal } from "../../redux/kioskAction";

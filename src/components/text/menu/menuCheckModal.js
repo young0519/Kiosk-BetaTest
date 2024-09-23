@@ -1,5 +1,5 @@
-import * as md from "../../../styles/modalStyle";
-import * as m from "../../../styles/basic/menuPageBasicStyle";
+import * as md from "../../../styles/text/modalTextStyle";
+import * as m from "../../../styles/text/menuPageTextStyle";
 import PaymentSelectModal from "../paymentSelectModal";
 import { useDispatch, useSelector } from "react-redux";
 import { SetPaymentModal, SetTotalMenuModal } from "../../../redux/kioskAction";
@@ -24,14 +24,14 @@ function MenuCheckModal() {
     return (
       <div>
         <md.MenuCheckContainer>
-          <h1>주문 내역을 다시 한번 확인하여 주세요.</h1>
+          <h1>주문 내역</h1>
           <hr/>
           <TotalMenuList/>
           <h1 className="colored">※ 매장 식사 시, 일회용 컵 사용 불가합니다 ※</h1>
           <hr/>
           <div className="infoContainer">
             <div className="menuCount">
-              <h3>선택메뉴</h3>
+              <h3>메뉴</h3>
               <p>{totalMenuCount}</p>
               <h3>개</h3>
             </div>

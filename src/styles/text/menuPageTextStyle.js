@@ -7,6 +7,7 @@ export const MenuSelectContainer = styled.div`
   display : flex;
   flex-direction : column;
   justify-content : space-between;
+  background-color : ${props => props.theme.colors.colorBg};
   align-items : center;
   .go_to_credit {
     width : 100%;
@@ -52,36 +53,39 @@ export const SubCategoryBox = styled.div`
   margin-top : 2rem;
   display : grid;
   grid-template-columns : repeat(5, 1fr);
-  margin-left : 5.4rem;
+  align-items : center;
+  justify-content : center;
   
 `
 // 하위 카테고리 메뉴 버튼 UI
 export const SubCategoryBtn = styled.button`
-    height : 4rem;
-    width : 15rem;
-    font-size : 2.5rem;
-    font-family : 'Pretendard-SemiBold';
-    border : none;
-    background-color:transparent;
-    color : ${props => props.theme.colors.blue1};
-    &.active {
-      background-color : ${props => props.theme.colors.blue1};
-      color : ${props => props.theme.colors.colorBg};
-      border-radius : 100rem;
-    }
+  height : 4rem;
+  width : 15.2rem;
+  margin : 0 auto;
+  font-size : 2.5rem;
+  font-family : 'Pretendard-SemiBold';
+  border : none;
+  background-color:transparent;
+  color : ${props => props.theme.colors.blue1};
+  &.active {
+    background-color : ${props => props.theme.colors.blue1};
+    color : ${props => props.theme.colors.colorBg};
+    border-radius : 100rem;
+  }
 `
 
 // 전체 메뉴 보여주기 레이아웃
 export const MenuItemContainer = styled.div`
   width: 100%;
   height: 126.6rem;
-  margin: 0 auto;
+  padding: 0 2rem;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-rows: repeat(3, 1fr);
   place-items: center;
   row-gap: 3rem;
-  margin-top: 2rem;
+  column-gap : 6rem;
+  margin-top: 1rem;
   overflow-y: scroll;
   &::-webkit-scrollbar {
     display: none;
@@ -90,29 +94,29 @@ export const MenuItemContainer = styled.div`
 
 // 메뉴 Item 레이아웃
 export const MenuItemBox = styled.div`
-  width : 22.41rem;
-  height : 29.673rem;
+  width : 28.617rem;
+  height : 39.662rem;
   display : flex;
   flex-direction : column;
   align-items : center;
-  justify-content : space-between;
+  justify-content : space-around;
   cursor : pointer;
   
   img {
-    width: 20rem;
-    height : 20rem;
+    width: 24.9rem;
+    height : 24.9rem;
     border-radius : 1rem;
   }
   h1 {
-    width : 24rem;
+    width : 35rem;
     text-align : center;
     margin-top : 1.4rem;
     margin-bottom : 0.7rem;
-    font-size : 2.817rem;
+    font-size : 3.765rem;
     font-family : 'Pretendard-SemiBold';
   }
   p {
-    font-size : 2.348rem;
+    font-size : 3.138rem;
     font-family : 'Pretendard-SemiBold';
   }
 `
