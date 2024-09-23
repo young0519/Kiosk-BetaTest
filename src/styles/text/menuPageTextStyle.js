@@ -74,7 +74,7 @@ export const SubCategoryBtn = styled.button`
 // 전체 메뉴 보여주기 레이아웃
 export const MenuItemContainer = styled.div`
   width: 100%;
-  height: 123.6rem;
+  height: 126.6rem;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));

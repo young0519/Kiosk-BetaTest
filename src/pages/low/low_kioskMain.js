@@ -1,9 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import * as m from "../../styles/mainPageStyle";
+import * as m from "../../styles/low/mainPageLowStyle";
 import LanguageSelect from "../../components/languageSelect";
 import wow_img from "../../assets/imgs/wowImg.png"
 import axios from "axios";
 import ScreenSelect from "../../components/screenSelect";
+
 
 
 function LowVersionKioskMain() {

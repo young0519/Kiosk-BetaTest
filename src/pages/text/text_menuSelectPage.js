@@ -1,18 +1,18 @@
-import ShoppingBag from "../../components/shoppingBag";
-import MenuCategory from "../../components/menu/menuCategory";
+import ShoppingBag from "../../components/text/shoppingBag";
+import MenuCategory from "../../components/text/menu/menuCategory";
 import LanguageSelect from "../../components/languageSelect";
-import * as main from "../../styles/mainPageStyle";
-import * as m from "../../styles/menuPageStyle";
+import * as main from "../../styles/text/mainPageTextStyle";
+import * as m from "../../styles/text/menuPageTextStyle";
 import * as md from "../../styles/modalStyle";
-import DetailMenuModal from "../../components/menu/detailMenuModal";
-import MenuCheckModal from "../../components/menu/menuCheckModal";
+import DetailMenuModal from "../../components/text/menu/detailMenuModal";
+import MenuCheckModal from "../../components/text/menu/menuCheckModal";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import PaymentSelectModal from "../../components/paymentSelectModal";
-import CardPaymentModal from "../../components/cardPaymentModal";
+import PaymentSelectModal from "../../components/text/paymentSelectModal";
+import CardPaymentModal from "../../components/text/cardPaymentModal";
 import { useDispatch, useSelector } from "react-redux";
 import { SetPayListInfo, SetTotalCount, SetTotalMenuModal, SetTotalPrice } from "../../redux/kioskAction";
-import ReceiptModal from "../../components/receiptModal";
+import ReceiptModal from "../../components/text/receiptModal";
 import ScreenSelect from "../../components/screenSelect";
 
 
