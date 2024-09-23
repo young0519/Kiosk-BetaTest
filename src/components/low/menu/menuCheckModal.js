@@ -1,5 +1,5 @@
-import * as md from "../../../styles/modalStyle";
-import * as m from "../../../styles/basic/menuPageBasicStyle";
+import * as md from "../../../styles/low/modalLowStyle";
+import * as m from "../../../styles/low/menuPageLowStyle";
 import PaymentSelectModal from "../paymentSelectModal";
 import { useDispatch, useSelector } from "react-redux";
 import { SetPaymentModal, SetTotalMenuModal } from "../../../redux/kioskAction";

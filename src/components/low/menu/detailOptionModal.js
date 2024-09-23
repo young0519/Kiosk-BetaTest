@@ -1,4 +1,4 @@
-import * as md from  "../../../styles/modalStyle"
+import * as md from  "../../../styles/low/modalLowStyle"
 import One_shot from "../../../assets/imgs/one_shot.png"
 import Two_shot from "../../../assets/imgs/two_shot.png"
 import Light_drink from "../../../assets/imgs/light_drink.png"

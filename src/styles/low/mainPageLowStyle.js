@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const KioskMainContainer = styled.div`
     width : 100vw;
-    height : 100vh;
+    height : 63.54166667vh;
+    background-color : ${props => props.theme.colors.colorBg};
     display : flex;
     flex-direction : column;
     justify-content : space-between;

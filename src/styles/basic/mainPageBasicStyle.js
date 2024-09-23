@@ -7,6 +7,7 @@ export const KioskMainContainer = styled.div`
     flex-direction : column;
     justify-content : space-between;
     align-items : center;
+    background-color : ${props => props.theme.colors.colorBg};
     h1 {
       font-size : 10rem;
     }

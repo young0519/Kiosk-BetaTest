@@ -1,4 +1,4 @@
-import * as md from "../../styles/modalStyle"
+import * as md from "../../styles/low/modalLowStyle"
 import blank_img from "../../assets/imgs/gray_color_bg.png"
 import credit_card from "../../assets/imgs/credit-card.png"
 import coupon from "../../assets/imgs/coupon.png"
@@ -53,7 +53,7 @@ const PaymentSelectModal = () => {
       />
       <h1>결제 수단을 선택해주세요.</h1>
       <h1 className="payInfo">1. 제휴 할인 선택</h1>
-      <div style={{display:'flex', alignItems:'center', justifyContent:'start'}}>
+      <div style={{display:'flex', alignItems:'center', justifyContent:'start', marginTop:'3rem'}}>
         <button 
           className={`discount-option KT ${selectedDiscount === 'KT' ? 'active' : ''}`}
           onClick={() => handleDiscountClick('KT')}
@@ -64,7 +64,7 @@ const PaymentSelectModal = () => {
         ><img src={blank_img} alt="임시"/>CJONE</button>
       </div>
       <h1 className="payInfo">2. 결제 수단 선택</h1>
-      <div style={{display:'flex', alignItems:'center', justifyContent:'start'}}>
+      <div style={{display:'flex', alignItems:'center', justifyContent:'start', marginTop:'3rem'}}>
         <button 
           className="payment-option"
           onClick={clickCardPay}

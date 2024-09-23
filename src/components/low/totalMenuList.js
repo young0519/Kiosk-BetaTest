@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import * as m from "../../styles/basic/menuPageBasicStyle";
+import * as m from "../../styles/low/menuPageLowStyle";
 import { SetPayListInfo, SetTotalCount, SetTotalPrice } from "../../redux/kioskAction";
 import { useEffect, useState } from "react";
 

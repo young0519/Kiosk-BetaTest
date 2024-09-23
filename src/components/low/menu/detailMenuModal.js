@@ -1,4 +1,4 @@
-import * as md from "../../../styles/modalStyle";
+import * as md from "../../../styles/low/modalLowStyle";
 import hot_drink from '../../../assets/imgs/hot_drink.png'
 import hot_drink_click from '../../../assets/imgs/hot_drink_click.png'
 import ice_drink from '../../../assets/imgs/ice_drink.png'
@@ -86,7 +86,7 @@ function DetailMenuModal() {
             <div className="drink-text">
               <h1>{menuInfoList.menuName}</h1>
               <p>{menuInfoList.menuExplain}</p>
-              <div style={{display:'flex', alignItems:'center', justifyContent:'space-between'}}>
+              <div style={{display:'flex', alignItems:'center', justifyContent:'space-between', lineHeight:'5rem'}}>
                 <h3>수량</h3>
                 <div style={{display:'flex', alignItems:'center', justifyContent:'space-between'}}>
                   <button onClick={handleQuantityDecrement}>-</button>
@@ -102,26 +102,26 @@ function DetailMenuModal() {
             <button 
               className={`drink-option hot ${selectedTemperature === 'hot' ? 'active' : ''}`}
               onClick={() => handleTemperatureClick('hot')}
-            ><img src={selectedTemperature === 'hot' ? hot_drink_click : hot_drink} alt="따뜻한 음료"/>뜨겁게</button>
+            >뜨겁게</button>
             <button 
               className={`drink-option ice ${selectedTemperature === 'ice' ? 'active' : ''}`}
               onClick={() => handleTemperatureClick('ice')}
-            ><img src={selectedTemperature === 'ice' ? ice_drink_click : ice_drink} alt="차가운 음료"/>차갑게</button>
+            > 차갑게</button>
           </div>
           <h2>사이즈 선택</h2>
           <div style={{display:'flex', alignItems:'center', justifyContent:'start'}}>
             <button 
               className={`drink-option small ${selectedSize === 'small' ? 'active' : ''}`}
               onClick={() => handleSizeClick('small')}
-            ><img src={selectedSize === 'small' ? small_cup_click : small_cup} alt="작은 음료"/>작은 컵</button>
+            >작은 컵</button>
             <button 
               className={`drink-option middle ${selectedSize === 'middle' ? 'active' : ''}`}
               onClick={() => handleSizeClick('middle')}
-            ><img src={selectedSize === 'middle' ? middle_cup_click : middle_cup} alt="기본 음료"/>기본 컵</button>
+            >기본 컵</button>
             <button 
               className={`drink-option big ${selectedSize === 'big' ? 'active' : ''}`}
               onClick={() => handleSizeClick('big')}
-            ><img src={selectedSize === 'big' ? big_cup_click : big_cup} alt="큰 음료"/>큰 컵</button>
+            >큰 컵</button>
           </div>
           <button 
             className="drink-recipe-Btn"

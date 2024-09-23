@@ -8,6 +8,7 @@ export const MenuSelectContainer = styled.div`
   flex-direction : column;
   justify-content : space-between;
   align-items : center;
+  background-color : ${props => props.theme.colors.colorBg};
   .go_to_credit {
     width : 100%;
     height : 40rem;

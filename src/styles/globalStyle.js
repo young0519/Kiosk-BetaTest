@@ -69,12 +69,11 @@ body {
   font-family : 'Pretendard-Medium';
 	display: flex;
   margin : auto;
-  background : ${props => props.theme.colors.colorBg};
+  background : ${props => props.theme.colors.colorMain};
   color : ${props => props.theme.colors.colorMain};
   list-style : none;
   height : 100vh;
-  justify-content: center;
-  align-items : center;
+  align-items : end;
   
   &::-webkit-scrollbar {
     display: none;

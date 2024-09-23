@@ -1,5 +1,5 @@
 import MenuItem from "./menuItem";
-import * as m from "../../../styles/basic/menuPageBasicStyle"
+import * as m from "../../../styles/low/menuPageLowStyle"
 import { useEffect, useState } from "react";
 
 function MenuCategory() {

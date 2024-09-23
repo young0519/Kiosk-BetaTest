@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import gray_color_bg from '../../../assets/imgs/gray_color_bg.png'
-import * as m from "../../../styles/basic/menuPageBasicStyle"
+import * as m from "../../../styles/low/menuPageLowStyle"
 import { SetMenuDetailModal, SetMenuInfo } from '../../../redux/kioskAction';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
