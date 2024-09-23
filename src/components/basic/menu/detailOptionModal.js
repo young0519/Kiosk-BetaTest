@@ -1,9 +1,8 @@
-import * as md from  "../../styles/modalStyle"
-import One_shot from "../../assets/imgs/one_shot.png"
-import Two_shot from "../../assets/imgs/two_shot.png"
-import Light_drink from "../../assets/imgs/light_drink.png"
-import blank_img from "../../assets/imgs/gray_color_bg.png"
-import dark_blank_img from "../../assets/imgs/dark_gray_bg.jpeg"
+import * as md from  "../../../styles/modalStyle"
+import One_shot from "../../../assets/imgs/one_shot.png"
+import Two_shot from "../../../assets/imgs/two_shot.png"
+import Light_drink from "../../../assets/imgs/light_drink.png"
+import dark_blank_img from "../../../assets/imgs/dark_gray_bg.jpeg"
 import { useState } from "react"
 
 const DetailOptionModal = ({setIsDetailOptionModal}) => {

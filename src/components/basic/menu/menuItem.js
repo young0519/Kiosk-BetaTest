@@ -1,10 +1,9 @@
 import { useDispatch } from 'react-redux';
-import gray_color_bg from '../../assets/imgs/gray_color_bg.png'
-import * as m from "../../styles/menuPageStyle"
-import { SetMenuDetailModal, SetMenuInfo } from '../../redux/kioskAction';
+import gray_color_bg from '../../../assets/imgs/gray_color_bg.png'
+import * as m from "../../../styles/basic/menuPageBasicStyle"
+import { SetMenuDetailModal, SetMenuInfo } from '../../../redux/kioskAction';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-
 
 function MenuItem({ name, price, explain, photoUrl }) {
   const dispatch = useDispatch();

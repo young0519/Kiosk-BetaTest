@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import * as m from "../styles/mainPageStyle";
+import * as m from "../styles/basic/mainPageBasicStyle";
 import LanguageSelect from "../components/languageSelect";
 import wow_img from "../assets/imgs/wowImg.png"
 import axios from "axios";

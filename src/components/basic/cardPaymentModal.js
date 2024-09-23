@@ -1,7 +1,7 @@
-import * as md from "../styles/modalStyle"
-import card_pay from "../assets/imgs/card_pay.png"
+import * as md from "../../styles/modalStyle"
+import card_pay from "../../assets/imgs/card_pay.png"
 import { useDispatch, useSelector } from "react-redux"
-import { SetCardPayModal, SetPaymentModal, SetReceiptModal } from "../redux/kioskAction";
+import { SetCardPayModal, SetPaymentModal, SetReceiptModal } from "../../redux/kioskAction";
 
 const CardPaymentModal = () => {
   const dispatch = useDispatch();

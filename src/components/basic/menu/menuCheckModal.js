@@ -1,10 +1,8 @@
-import { useSearchParams } from "react-router-dom";
-import * as md from "../../styles/modalStyle";
-import * as m from "../../styles/menuPageStyle";
-import { useState } from "react";
+import * as md from "../../../styles/modalStyle";
+import * as m from "../../../styles/basic/menuPageBasicStyle";
 import PaymentSelectModal from "../paymentSelectModal";
 import { useDispatch, useSelector } from "react-redux";
-import { SetPaymentModal, SetTotalMenuModal } from "../../redux/kioskAction";
+import { SetPaymentModal, SetTotalMenuModal } from "../../../redux/kioskAction";
 import TotalMenuList from "../totalMenuList";
 
 

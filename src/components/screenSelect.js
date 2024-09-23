@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import * as k from "../styles/mainPageStyle";
+import * as k from "../styles/basic/mainPageBasicStyle";
 import { useEffect, useState } from 'react';
 import { SetScreenState } from "../redux/kioskAction";
 import { useLocation, useNavigate } from "react-router-dom";

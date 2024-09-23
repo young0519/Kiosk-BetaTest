@@ -1,4 +1,4 @@
-import * as k from "../styles/mainPageStyle";
+import * as k from "../styles/basic/mainPageBasicStyle";
 import { useState } from 'react';
 
 function LanguageSelect() {

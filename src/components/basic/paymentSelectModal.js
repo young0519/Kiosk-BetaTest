@@ -1,12 +1,12 @@
-import * as md from "../styles/modalStyle"
-import blank_img from "../assets/imgs/gray_color_bg.png"
-import credit_card from "../assets/imgs/credit-card.png"
-import coupon from "../assets/imgs/coupon.png"
-import quit_btn from "../assets/imgs/quit_btn.png"
+import * as md from "../../styles/modalStyle"
+import blank_img from "../../assets/imgs/gray_color_bg.png"
+import credit_card from "../../assets/imgs/credit-card.png"
+import coupon from "../../assets/imgs/coupon.png"
+import quit_btn from "../../assets/imgs/quit_btn.png"
 import { useState } from "react"
 import CardPaymentModal from "./cardPaymentModal"
 import { useDispatch, useSelector } from "react-redux"
-import { SetCardPayModal, SetPaymentModal } from "../redux/kioskAction"
+import { SetCardPayModal, SetPaymentModal } from "../../redux/kioskAction"
 
 const PaymentSelectModal = () => {
   const dispatch = useDispatch();

@@ -1,12 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
-import * as m from "../styles/menuPageStyle";
-import { SetPayListInfo, SetTotalCount, SetTotalPrice } from "../redux/kioskAction";
-import delete_img from "../assets/imgs/delete.png";
-import decrease_btn from "../assets/imgs/decrease_btn.png";
-import increase_btn from "../assets/imgs/increase_btn.png";
+import * as m from "../../styles/basic/menuPageBasicStyle";
+import { SetPayListInfo, SetTotalCount, SetTotalPrice } from "../../redux/kioskAction";
 import { useEffect, useState } from "react";
 
-function ShoppingBag() {
+function TotalMenuList() {
   const dispatch = useDispatch();
   const shoppingBagList = useSelector((state) => state.shoppingBagList);
 
@@ -48,23 +45,18 @@ function ShoppingBag() {
   }, [])
 
   return (
-    <m.SmallShoppingBag>
+    <m.BigShoppingBag>
       {shoppingBagList.map((item, index) => (
-        <m.SmallShoppingItem key={index}>
+        <m.BigShoppingItem key={index}>
           <div className="menu-info">
             <span className="menu-name">{item.menuName}</span>
-            <div className="quantity-info">
-              <img className="updown-btn" src={decrease_btn} onClick={() => handleQuantityDecrement(index)} alt="감소" />
-              <span className="quantity">{item.quantity}</span>
-              <img className="updown-btn" src={increase_btn} onClick={() => handleQuantityIncrement(index)} alt="증가" />
-            </div>
+            <span className="quantity">{item.quantity}</span>
           </div>
-          <span>{item.totalPrice.toLocaleString('ko-KR')}</span>
-          <img src={delete_img} alt="메뉴 삭제 버튼" onClick={() => handleDelete(index)} />
-        </m.SmallShoppingItem>
+          <span>{item.totalPrice.toLocaleString('ko-KR')} 원</span>
+        </m.BigShoppingItem>
       ))}
-    </m.SmallShoppingBag>
+    </m.BigShoppingBag>
   );
 }
 
-export default ShoppingBag;
+export default TotalMenuList;
