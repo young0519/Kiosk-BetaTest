@@ -59,16 +59,25 @@ const GlobalStyle = createGlobalStyle`
     font-size : 62.5% // 1rem = 10px
   }
 }
+@media (min-width: 600px) and (max-width : 799px) {
+  html {
+    font-size : 45.5%;  // 1rem = 10px
+  }
+}
 
 body {
   font-family : 'Pretendard-Medium';
 	display: flex;
   margin : auto;
-  background : ${props => props.theme.colors.colorBg};
+  background : ${props => props.theme.colors.colorMain};
   color : ${props => props.theme.colors.colorMain};
   list-style : none;
   height : 100vh;
-  justify-content: center;
+  align-items : end;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 `;
 

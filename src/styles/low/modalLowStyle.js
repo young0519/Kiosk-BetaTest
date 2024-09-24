@@ -29,12 +29,12 @@ export const ModalTopBackgroundContainer = styled.div`
 export const DetailMenuContainer = styled.div`
   position: absolute;
   z-index: 30;
-  top: 50%;
+  top: 69%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(255, 255, 255, 1);
   width: 86rem;
-  height: 130rem;
+  height: 110.2rem;
   padding : 2.6rem 3rem;
   border-radius : 2rem;
   display : flex;
@@ -50,8 +50,8 @@ export const DetailMenuContainer = styled.div`
     align-items : center;
     justify-content : space-between;
     img {
-      width : 18rem;
-      height : 23rem;
+      width : 16.2rem;
+      height : 21rem;
       margin : 0 3rem 0 0;
     }
     .drink-text {
@@ -99,27 +99,21 @@ export const DetailMenuContainer = styled.div`
   }
   hr{border: 0.1rem solid ${props => props.theme.colors.blue0}}
   .drink-option {
-    width : 16rem;
-    height : 14.6rem;
+    width : 18rem;
+    height : 7rem;
     display : flex;
     flex-direction : column;
     align-items : center;
-    justify-content : space-between;
+    justify-content : center;
     padding : 1rem;
     margin : 0 3rem 0 0;
     border : none;
     border-radius : 1.5rem;
     background-color : ${props => props.theme.colors.gray1};
     font-size : 3rem;
-    img {
-      width : 8rem;
-      height : 8rem;
-    }
     &.active {
       background-color : ${props => props.theme.colors.blue1};
       color : ${props => props.theme.colors.colorBg};
-
-
     }
   }
   .drink-recipe-Btn {
@@ -179,7 +173,7 @@ export const DetailMenuContainer = styled.div`
 export const DetailOptionContainer = styled.div`
   position: absolute;
   z-index: 80;
-  top: 50%;
+  top: 69%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(255, 255, 255, 1);
@@ -283,12 +277,12 @@ export const DetailOptionContainer = styled.div`
 export const MenuCheckContainer = styled.div`
   position: absolute;
   z-index: 30;
-  top: 50%;
+  top: 69%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(255, 255, 255, 1);
   width: 86rem;
-  height: 130rem;
+  height: 103.6rem;
   padding : 2.6rem;
   border-radius : 2rem;
   display : flex;
@@ -371,12 +365,12 @@ export const MenuCheckContainer = styled.div`
 export const PaymentSelectContainer = styled.div`
   position: absolute;
   z-index: 40;
-  top: 50%;
+  top: 69%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(255, 255, 255, 1);
   width: 86rem;
-  height: 130rem;
+  height: 103.6rem;
   padding : 2.6rem;
   border-radius : 2rem;
   display : flex;
@@ -392,6 +386,7 @@ export const PaymentSelectContainer = styled.div`
   h1 {
     font-family : 'Pretendard-SemiBold';
     font-size : 3rem;
+    margin-top : 2rem;
     margin-bottom : 2rem;
     &.payInfo {
       margin-bottom : 0rem;
@@ -439,7 +434,7 @@ export const PaymentSelectContainer = styled.div`
     }
   }
   hr{
-    margin : 60rem 0 0 0;
+    margin : 30rem 0 0 0;
     border: 0.1rem solid ${props => props.theme.colors.blue0};
   }
   .infoContainer {
@@ -478,7 +473,7 @@ export const PaymentSelectContainer = styled.div`
 export const CardpayContainer = styled.div`
   position: absolute;
   z-index: 90;
-  top: 50%;
+  top: 69%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(255, 255, 255, 1);
@@ -552,12 +547,11 @@ export const CardpayContainer = styled.div`
   }
 `
 
-
 // 영수증 출력 모달
 export const ReceiptModalContainer = styled.div`
   position: absolute;
   z-index: 90;
-  top: 50%;
+  top: 69%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(255, 255, 255, 1);
