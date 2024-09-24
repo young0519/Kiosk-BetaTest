@@ -7,11 +7,35 @@ export const KioskStartContainer = styled.div`
     flex-direction : column;
     justify-content : space-between;
     align-items : center;
-    background-color : ${props => props.theme.colors.colorBg};
+    background-color : #BE9367;
+    padding-top : 10rem;
+    img {
+      width : 60rem;
+      border-radius : 5rem;
+    }
+
+    h1 {
+      margin : 0 3rem;
+      font-size : 7rem;
+      line-height : 11rem;
+      text-align: center;
+      span {
+        color : ${props => props.theme.colors.blue1};
+      }
+    }
     p {
       margin : 0 3rem;
-      font-size : 8rem;
-      line-height : 11rem;
+      font-size : 4rem;
+      line-height : 6rem;
+      text-align: center;
+      span {
+        color : ${props => props.theme.colors.blue1};
+      }
+    }
+    .info-test {
+      margin : 0 3rem;
+      font-size : 2.5rem;
+      line-height : 5rem;
       text-align: center;
       span {
         color : ${props => props.theme.colors.blue1};
@@ -36,7 +60,7 @@ export const KioskMainContainer = styled.div`
     flex-direction : column;
     justify-content : space-between;
     align-items : center;
-    background-color : ${props => props.theme.colors.colorBg};
+    background-color : #BE9367;
     h1 {
       font-size : 10rem;
     }
@@ -79,7 +103,7 @@ export const ScreenBox = styled.div`
     width: 15.9rem;
     height: 4.8rem;
     color: ${props => props.theme.colors.colorBg};
-    background-color: ${props => props.theme.colors.gray2};
+    background-color: ${props => props.theme.colors.gray6};
     font-size: 2.5rem;
     font-family : 'Pretendard-Medium';
     margin: 0 0.5rem;

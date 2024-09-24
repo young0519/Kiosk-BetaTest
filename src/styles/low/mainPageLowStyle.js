@@ -3,13 +3,16 @@ import styled from "styled-components";
 export const KioskMainContainer = styled.div`
     width : 100vw;
     height : 63.54166667vh;
-    background-color : ${props => props.theme.colors.colorBg};
+    background-color : #BE9367;
     display : flex;
     flex-direction : column;
     justify-content : space-between;
     align-items : center;
     h1 {
       font-size : 10rem;
+    }
+    img {
+      width : 50rem;
     }
 `
 export const startBtnContainer = styled.div `

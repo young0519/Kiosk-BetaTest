@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import * as m from "../styles/basic/mainPageBasicStyle";
 import LanguageSelect from "../components/languageSelect";
+import reTUroBAR from "../assets/imgs/reTUroBAR_썸네일.jpeg"
 import wow_img from "../assets/imgs/wowImg.png";
 import axios from "axios";
 import ScreenSelect from "../components/screenSelect";
@@ -11,39 +12,24 @@ function KioskStart() {
   const [loading, setLoading] = useState(false); // 로딩 상태 관리
 
   const moveToMain = () => {
-    setLoading(true); // 로딩 시작
-    axios.get(`${axios.defaults.additionalBaseURL}/inference`)
-      .then(response => {
-        console.log(response.data);
-        if (response.data.position === 'NORM' && response.data.age >= '50') {
-          navigate("/text");
-        } else if (response.data.position === 'NORM') {
-          navigate("/basic");
-        } else if (response.data.position === 'LOW') {
-          navigate("/low");
-        } else {
-          navigate("/basic");
-        }
-      })
-      .catch(error => {
-        console.error(error);
-      })
-      .finally(() => {
-        setLoading(false); // 로딩 종료
-      });
+    navigate("/basic");
   };
 
   return (
     <m.KioskStartContainer>
-      <m.MenuHeader>
-        <LanguageSelect />
-      </m.MenuHeader>
+      <img src={reTUroBAR} alt="썸네일"/>
+      <h1>
+        <span>reTUro BAR</span>에 오신 것을<br />진심으로 환영합니다.<br />
+      </h1>
       <p>
-        저희 매장의 키오스크는 <br />
-        <span>카메라 AI</span>를 활용하여 <br />
-        <span>나이대와 성별</span>을 추론하여 <br />
-        메뉴 추천 및 다양한 모드를 <br />
-        제공하고 있어요
+      해당 키오스크는 현재 홍익대학교 컴퓨터공학과<br />
+      2024년도 2학기 졸업프로젝트 'HOIKS'팀의<br />
+      <span>베타테스트</span> 용도로 운영되고 있습니다.<br />
+      <span>다양한 모드</span>가 있으니, 체험해보세요 :)
+      </p>
+      <p className="info-test">
+        주문 정보는 통계 및 추천 시스템의 데이터로 활용될 예정입니다.<br />
+        키오스크로 주문할 경우, 주문 정보 사용에 동의하는 것으로 간주됩니다.<br />
       </p>
       {loading ? ( // 로딩 상태에 따라 로더 또는 버튼 표시
         <div className="loader loader--style2" title="1">

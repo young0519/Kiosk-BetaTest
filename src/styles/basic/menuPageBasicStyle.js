@@ -36,7 +36,7 @@ export const TopCategoryBox = styled.div`
 // 상위 카테고리 메뉴 버튼 UI
 export const TopCategoryBtn = styled.button`
   height : 8rem;
-  width :  15rem;
+  width :  45%;
   font-size : 3rem;
   font-family : 'Pretendard-SemiBold';
   background-color : ${props => props.theme.colors.colorBg};

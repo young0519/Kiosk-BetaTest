@@ -1,10 +1,8 @@
 import * as md from "../../../styles/modalStyle";
 import * as m from "../../../styles/basic/menuPageBasicStyle";
-import PaymentSelectModal from "../paymentSelectModal";
 import { useDispatch, useSelector } from "react-redux";
-import { SetPaymentModal, SetTotalMenuModal } from "../../../redux/kioskAction";
+import { SetReceiptModal, SetTotalMenuModal } from "../../../redux/kioskAction";
 import TotalMenuList from "../totalMenuList";
-
 
 function MenuCheckModal() {
   const dispatch = useDispatch();
@@ -14,7 +12,7 @@ function MenuCheckModal() {
   
   const selectPackage = () => {
     dispatch(SetTotalMenuModal(false));
-    dispatch(SetPaymentModal(true));
+    dispatch(SetReceiptModal(true));
 
   }
 

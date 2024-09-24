@@ -1,7 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import * as m from "../../styles/text/mainPageTextStyle";
-import LanguageSelect from "../../components/languageSelect";
-import wow_img from "../../assets/imgs/wowImg.png"
 import axios from "axios";
 import ScreenSelect from "../../components/screenSelect";
 
@@ -27,7 +25,6 @@ function TextVersionKioskMain() {
     <m.KioskMainContainer>
       <m.MenuHeader>
         <ScreenSelect/>
-        <LanguageSelect/>
       </m.MenuHeader>
       <m.startBtnContainer>
         <button 

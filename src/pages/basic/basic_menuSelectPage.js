@@ -8,8 +8,6 @@ import DetailMenuModal from "../../components/basic/menu/detailMenuModal";
 import MenuCheckModal from "../../components/basic/menu/menuCheckModal";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import PaymentSelectModal from "../../components/basic/paymentSelectModal";
-import CardPaymentModal from "../../components/basic/cardPaymentModal";
 import { useDispatch, useSelector } from "react-redux";
 import { SetPayListInfo, SetTotalCount, SetTotalMenuModal, SetTotalPrice } from "../../redux/kioskAction";
 import ReceiptModal from "../../components/basic/receiptModal";
@@ -22,8 +20,6 @@ function BasicMenuSelect() {
 
   let menuDetailModalState = useSelector( (state)=>{ return state.menuDetailModalState } );
   let checkMenuModalState = useSelector( (state)=>{ return state.checkMenuModalState } );
-  let paymentSelectModalState = useSelector( (state)=>{ return state.paymentSelectModalState } );
-  let cardPayModalState = useSelector( (state)=>{ return state.cardPayModalState } );
   let receiptModalState = useSelector( (state)=>{ return state.receiptModalState } );
   let totalMenuCount = useSelector((state) => state.totalMenuCount);
   let totalPrice = useSelector((state) => state.totalPrice);
@@ -69,18 +65,6 @@ function BasicMenuSelect() {
           </md.ModalBackgroundContainer>
         }
         {
-          paymentSelectModalState && 
-            <md.ModalBackgroundContainer>
-              <PaymentSelectModal/>
-            </md.ModalBackgroundContainer>
-        }
-        {
-          cardPayModalState && 
-          <md.ModalTopBackgroundContainer>
-            <CardPaymentModal />
-          </md.ModalTopBackgroundContainer>
-        }
-        {
           receiptModalState && 
           <md.ModalTopBackgroundContainer>
             <ReceiptModal />
@@ -89,7 +73,6 @@ function BasicMenuSelect() {
         <m.MenuSelectContainer>
           <main.MenuHeader>
             <ScreenSelect/>
-            <LanguageSelect/>
           </main.MenuHeader>
           <MenuCategory/>
           <div className="go_to_credit">

@@ -1,14 +1,16 @@
 import { useNavigate } from "react-router-dom";
 import * as m from "../../styles/basic/mainPageBasicStyle";
 import LanguageSelect from "../../components/languageSelect";
-import wow_img from "../../assets/imgs/wowImg.png"
 import axios from "axios";
 import ScreenSelect from "../../components/screenSelect";
+import reTUroBAR from "../../assets/imgs/reTUroBAR_썸네일.jpeg"
 
 
 function KioskMain() {
   const navigate = useNavigate();
   const moveToMenu = () => {
+    navigate("/basic/menu");
+    
     axios.get('/kiosk/items')
     .then(response => {
       console.log(response.data);
@@ -16,7 +18,6 @@ function KioskMain() {
       // response 데이터의 topCategories를 localStorage에 저장
       localStorage.setItem('menuData', JSON.stringify(response.data));
       
-      navigate("/basic/menu");
     })
     .catch(error => {
       console.error(error);
@@ -27,10 +28,8 @@ function KioskMain() {
     <m.KioskMainContainer>
       <m.MenuHeader>
         <ScreenSelect/>
-        <LanguageSelect/>
       </m.MenuHeader>
-      <img src={wow_img}/>
-      <h1>HOIKS</h1>
+      <img src={reTUroBAR}/>
       <m.startBtnContainer >
         <button 
           onClick={moveToMenu}

@@ -89,7 +89,6 @@ function LowVersionMenuSelect() {
         <m.MenuSelectContainer>
           <main.MenuHeader>
             <ScreenSelect/>
-            <LanguageSelect/>
           </main.MenuHeader>
           <MenuCategory/>
           <div className="go_to_credit">

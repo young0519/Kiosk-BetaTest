@@ -3,7 +3,23 @@ import gray_color_bg from '../../../assets/imgs/gray_color_bg.png'
 import * as m from "../../../styles/basic/menuPageBasicStyle"
 import { SetMenuDetailModal, SetMenuInfo } from '../../../redux/kioskAction';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import menuDataList from "../../../assets/menuData.json"
+// import 나쵸플래터 from "../../../assets/imgs/나쵸플래터.png"
+// import 불닭게티 from "../../../assets/imgs/불닭게티.png"
+// import 프리미엄_불닭게티 from "../../../assets/imgs/프리미엄_불닭게티.png"
+// import 쿠바리브레 from "../../../assets/imgs/쿠바리브레.png"
+// import 선라이즈 from "../../../assets/imgs/선라이즈.png"
+// import 스파클러_칵테일 from "../../../assets/imgs/스파클러_칵테일.png"
+
+const imageMapping = {
+  nachoPlater: require("../../../assets/imgs/나쵸플래터.png"),
+  buldak: require("../../../assets/imgs/불닭게티.png"),
+  Premium_buldak: require("../../../assets/imgs/프리미엄_불닭게티.png"),
+  sunrise: require("../../../assets/imgs/선라이즈.png"),
+  cuba: require("../../../assets/imgs/쿠바리브레.png"),
+  // po_spark: require("../../../assets/imgs/스파클러_칵테일.png").default,
+  grape_spark: require("../../../assets/imgs/스파클러_칵테일.png") // 예시로 같은 이미지를 사용
+};
 
 function MenuItem({ name, price, explain, photoUrl }) {
   const dispatch = useDispatch();
@@ -12,22 +28,9 @@ function MenuItem({ name, price, explain, photoUrl }) {
   const formattedPrice = price.toLocaleString('ko-KR');
 
   useEffect(() => {
-    const fetchImage = async () => {
-      try {
-        const response = await axios.get(`/file/static/${photoUrl}`, {
-          responseType: 'blob' // 이미지 파일로 응답을 받기 위해 responseType 설정
-        });
-
-        const imageUrl = URL.createObjectURL(response.data); // Blob URL 생성
-        setImageSrc(imageUrl); // Blob URL로 이미지 소스 설정
-      } catch (error) {
-        console.error("이미지 로드 실패:", error);
-      }
-    };
-
-    if (photoUrl) {
-      fetchImage();
-    }
+    // photoUrl에 따라 이미지를 설정
+    const imgSrc = imageMapping[photoUrl] || gray_color_bg; // 매핑된 이미지가 없으면 기본 이미지 사용
+    setImageSrc(imgSrc);
   }, [photoUrl]);
 
   const openDetailModal = () => {
