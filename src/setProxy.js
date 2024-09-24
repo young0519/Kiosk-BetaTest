@@ -9,7 +9,7 @@ module.exports = function(app) {
   );
   app.use(
     createProxyMiddleware('/api2', {
-      target: "http://raymondcty.duckdns.org:6133",
+      target: "http://172.20.10.5:8000",
       changeOrigin: true,
     })
   );
