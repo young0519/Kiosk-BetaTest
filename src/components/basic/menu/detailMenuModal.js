@@ -19,7 +19,6 @@ import barbaque from '../../../assets/imgs/바비큐.png'
 import barbaque_click from '../../../assets/imgs/barbaque_click.png'
 import hotsauce from '../../../assets/imgs/핫소스.png'
 import hotsauce_click from '../../../assets/imgs/hotsauce_click.png'
-import DetailOptionModal from "./detailOptionModal";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { SetMenuDetailModal, SetPayListInfo } from "../../../redux/kioskAction";
@@ -75,14 +74,55 @@ function DetailMenuModal() {
   };
 
   const AddCartClick = () => {
+    // const addMenu = {
+    //   menuName: menuInfoList.menuName,
+    //   quantity: quantity,
+    //   perPrice : menuInfoList.menuPrice,
+    //   totalPrice: totalPrice
+    // };
+  
+    // dispatch(SetPayListInfo([...shoppingBagList, addMenu]));
+    // dispatch(SetMenuDetailModal(false));
+
     const addMenu = {
       menuName: menuInfoList.menuName,
+      selectedChip: selectedChip, // 선택한 과자 추가
+      selectedVeg: selectedVeg, // 선택한 야채 추가
+      selectedSauce: selectedSauce, // 선택한 소스 추가
       quantity: quantity,
-      perPrice : menuInfoList.menuPrice,
+      perPrice: menuInfoList.menuPrice,
       totalPrice: totalPrice
     };
   
-    dispatch(SetPayListInfo([...shoppingBagList, addMenu]));
+    // 나쵸 플래터인지 확인
+    const isNachoPlatter = menuInfoList.menuName === "나쵸 플래터";
+  
+    // 현재 장바구니에 같은 메뉴가 있는지 확인
+    const existingMenuIndex = shoppingBagList.findIndex(item => item.menuName === menuInfoList.menuName);
+  
+    if (existingMenuIndex !== -1) {
+      if (isNachoPlatter) {
+        // 나쵸 플래터인 경우, 새로운 항목으로 추가
+        dispatch(SetPayListInfo([...shoppingBagList, addMenu]));
+      } else {
+        // 나쵸 플래터가 아닌 경우, 수량 증가
+        const updatedShoppingBagList = shoppingBagList.map((item, index) => {
+          if (index === existingMenuIndex) {
+            return {
+              ...item,
+              quantity: item.quantity + quantity, // 기존 수량에 추가
+              totalPrice: (item.quantity + quantity) * item.perPrice // 총 가격 업데이트
+            };
+          }
+          return item;
+        });
+        dispatch(SetPayListInfo(updatedShoppingBagList));
+      }
+    } else {
+      // 장바구니에 같은 메뉴가 없는 경우
+      dispatch(SetPayListInfo([...shoppingBagList, addMenu]));
+    }
+  
     dispatch(SetMenuDetailModal(false));
   };
 
@@ -123,13 +163,13 @@ function DetailMenuModal() {
                   onClick={() => handleChipClick('nacho_click')}
                 ><img src={nacho_click} alt="따뜻한 음료"/>나쵸</button>
                 <button 
-                  className={`drink-option ogamza ${selectedChip === 'ogamza' ? 'active' : ''}`}
-                  onClick={() => handleChipClick('ogamza')}
-                ><img src={selectedChip === 'ogamza' ? ogamza_click : ogamza} alt="차가운 음료"/>오감자</button>
+                  className={`drink-option ogamza ${selectedChip === '오감자' ? 'active' : ''}`}
+                  onClick={() => handleChipClick('오감자')}
+                ><img src={selectedChip === '오감자' ? ogamza_click : ogamza} alt="차가운 음료"/>오감자</button>
                 <button 
-                  className={`drink-option cheetos ${selectedChip === 'cheetos' ? 'active' : ''}`}
-                  onClick={() => handleChipClick('cheetos')}
-                ><img src={selectedChip === 'cheetos' ? cheetos_click : cheetos} alt="차가운 음료"/>치토스</button>
+                  className={`drink-option cheetos ${selectedChip === '치토스' ? 'active' : ''}`}
+                  onClick={() => handleChipClick('치토스')}
+                ><img src={selectedChip === '치토스' ? cheetos_click : cheetos} alt="차가운 음료"/>치토스</button>
               </div>
               <h2>야채 선택 (택 3)</h2>
               <div style={{display:'flex', alignItems:'center', justifyContent:'start'}}>
@@ -138,17 +178,17 @@ function DetailMenuModal() {
                   onClick={() => handleVegClick('onion')}
                 ><img src={selectedVeg === 'onion' ? onion_click : onion} alt="작은 음료"/>양파</button> */}
                 <button 
-                  className={`drink-option onion ${selectedVeg.includes('onion') ? 'active' : ''}`}
-                  onClick={() => handleVegClick('onion')}
-                ><img src={selectedVeg.includes('onion') ? onion_click : onion} alt="작은 음료" />양파</button>
+                  className={`drink-option onion ${selectedVeg.includes('양파') ? 'active' : ''}`}
+                  onClick={() => handleVegClick('양파')}
+                ><img src={selectedVeg.includes('양파') ? onion_click : onion} alt="작은 음료" />양파</button>
                 <button 
-                  className={`drink-option tomato ${selectedVeg.includes('tomato') ? 'active' : ''}`}
-                  onClick={() => handleVegClick('tomato')}
-                ><img src={selectedVeg.includes('tomato') ? tomato_click : tomato} alt="작은 음료" />토마토</button>
+                  className={`drink-option tomato ${selectedVeg.includes('토마토') ? 'active' : ''}`}
+                  onClick={() => handleVegClick('토마토')}
+                ><img src={selectedVeg.includes('토마토') ? tomato_click : tomato} alt="작은 음료" />토마토</button>
                 <button 
-                  className={`drink-option halapino ${selectedVeg.includes('halapino') ? 'active' : ''}`}
-                  onClick={() => handleVegClick('halapino')}
-                ><img src={selectedVeg.includes('halapino') ? hotsauce_click : hotsauce} alt="작은 음료" />할라피뇨</button>
+                  className={`drink-option 할라피뇨 ${selectedVeg.includes('할라피뇨') ? 'active' : ''}`}
+                  onClick={() => handleVegClick('할라피뇨')}
+                ><img src={selectedVeg.includes('할라피뇨') ? hotsauce_click : hotsauce} alt="작은 음료" />할라피뇨</button>
                 <button 
                   className={`drink-option 양상추 ${selectedVeg.includes('양상추') ? 'active' : ''}`}
                   onClick={() => handleVegClick('양상추')}
@@ -157,21 +197,21 @@ function DetailMenuModal() {
               <h2>소스 선택 (택 2~3)</h2>
               <div style={{display:'flex', alignItems:'center', justifyContent:'start'}}>
                 <button 
-                  className={`drink-option cheeze ${selectedSauce.includes('cheeze') ? 'active' : ''}`}
-                  onClick={() => handleSauceClick('cheeze')}
-                ><img src={selectedSauce.includes('cheeze') ? cheeze_click : cheeze} alt="작은 음료" />치즈</button>
+                  className={`drink-option cheeze ${selectedSauce.includes('치즈') ? 'active' : ''}`}
+                  onClick={() => handleSauceClick('치즈')}
+                ><img src={selectedSauce.includes('치즈') ? cheeze_click : cheeze} alt="작은 음료" />치즈</button>
                 <button 
-                  className={`drink-option salsa ${selectedSauce.includes('salsa') ? 'active' : ''}`}
-                  onClick={() => handleSauceClick('salsa')}
-                ><img src={selectedSauce.includes('salsa') ? salsa_click : salsa} alt="작은 음료" />살사</button>
+                  className={`drink-option salsa ${selectedSauce.includes('살사') ? 'active' : ''}`}
+                  onClick={() => handleSauceClick('살사')}
+                ><img src={selectedSauce.includes('살사') ? salsa_click : salsa} alt="작은 음료" />살사</button>
                 <button 
-                  className={`drink-option barbaque ${selectedSauce.includes('barbaque') ? 'active' : ''}`}
-                  onClick={() => handleSauceClick('barbaque')}
-                ><img src={selectedSauce.includes('barbaque') ? barbaque_click : barbaque} alt="작은 음료" />바비큐</button>
+                  className={`drink-option barbaque ${selectedSauce.includes('바비큐') ? 'active' : ''}`}
+                  onClick={() => handleSauceClick('바비큐')}
+                ><img src={selectedSauce.includes('바비큐') ? barbaque_click : barbaque} alt="작은 음료" />바비큐</button>
                 <button 
-                  className={`drink-option hotsauce ${selectedSauce.includes('hotsauce') ? 'active' : ''}`}
-                  onClick={() => handleSauceClick('hotsauce')}
-                ><img src={selectedSauce.includes('hotsauce') ? hotsauce_click : hotsauce} alt="작은 음료" />핫소스</button>
+                  className={`drink-option hotsauce ${selectedSauce.includes('핫소스') ? 'active' : ''}`}
+                  onClick={() => handleSauceClick('핫소스')}
+                ><img src={selectedSauce.includes('핫소스') ? hotsauce_click : hotsauce} alt="작은 음료" />핫소스</button>
               </div>
             </>
           ) : (

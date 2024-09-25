@@ -1,12 +1,11 @@
 import MenuItem from "./menuItem";
 import * as m from "../../../styles/low/menuPageLowStyle"
 import { useEffect, useState } from "react";
+import menuDataList from "../../../assets/menuData.json"
 
 function MenuCategory() {
   const [selectedTopCategory, setSelectedTopCategory] = useState('');
-  
-  // localStorage에서 menuData 가져오기
-  const menuListData = JSON.parse(localStorage.getItem('menuData'));
+  const menuListData = menuDataList;
 
   useEffect(() => {
     // 초기 선택 상태 설정
@@ -39,7 +38,6 @@ function MenuCategory() {
           </m.TopCategoryBtn>
         ))}
       </m.TopCategoryBox>
-      
       {/* 상세 메뉴 종류 */}
       <m.MenuItemContainer>
       {menuListData.topCategories
@@ -50,12 +48,13 @@ function MenuCategory() {
               name={item.name}
               price={item.price}
               explain={item.info}
-              photoUrl={item.photoUrl}
+              photoUrl={item.photoURL}
             />
           ))}
       </m.MenuItemContainer>
     </div>
   )
 }
+
 
 export default MenuCategory;  

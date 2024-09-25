@@ -6,8 +6,6 @@ import GlobalStyle from './styles/globalStyle';
 import BasicMenuSelect from './pages/basic/basic_menuSelectPage';
 import LowVersionKioskMain from './pages/low/low_kioskMain';
 import LowVersionMenuSelect from './pages/low/low_menuSelectPage';
-import TextVersionKioskMain from './pages/text/text_kioskMain';
-import TextVersionMenuSelect from './pages/text/text_menuSelectPage';
 import KioskStart from './pages/kioskStart';
 
 function App() {
@@ -21,8 +19,6 @@ function App() {
             <Route path='/basic/menu' element={<BasicMenuSelect />} />
             <Route path='/low' element={<LowVersionKioskMain />} />
             <Route path='/low/menu' element={<LowVersionMenuSelect />} />
-            <Route path='/text' element={<TextVersionKioskMain />} />
-            <Route path='/text/menu' element={<TextVersionMenuSelect />} />
           </Routes>
       </ThemeProvider> 
     </BrowserRouter>

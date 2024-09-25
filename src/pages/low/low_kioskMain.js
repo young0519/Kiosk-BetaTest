@@ -8,18 +8,7 @@ import reTUroBAR from "../../assets/imgs/reTUroBAR_썸네일.jpeg
 function LowVersionKioskMain() {
   const navigate = useNavigate();
   const moveToMenu = () => {
-    axios.get('/kiosk/items')
-    .then(response => {
-      console.log(response.data);
-
-      // response 데이터의 topCategories를 localStorage에 저장
-      localStorage.setItem('menuData', JSON.stringify(response.data));
-      
-      navigate("/low/menu");
-    })
-    .catch(error => {
-      console.error(error);
-    });
+    navigate("/low/menu");
   };
   
   return (

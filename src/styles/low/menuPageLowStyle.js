@@ -36,7 +36,7 @@ export const TopCategoryBox = styled.div`
 // 상위 카테고리 메뉴 버튼 UI
 export const TopCategoryBtn = styled.button`
   height : 8rem;
-  width :  15rem;
+  width :  45%;
   font-size : 3rem;
   font-family : 'Pretendard-SemiBold';
   background-color : ${props => props.theme.colors.colorBg};
@@ -160,6 +160,7 @@ export const SmallShoppingBag = styled.div`
   border-radius : 1rem;
   background-color : ${props => props.theme.colors.colorBg};
   padding : 1.5rem;
+  overflow : scroll;
 `
 // 장바구니 짧은 ITEM UI
 export const SmallShoppingItem = styled.div`

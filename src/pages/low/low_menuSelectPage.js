@@ -22,8 +22,6 @@ function LowVersionMenuSelect() {
 
   let menuDetailModalState = useSelector( (state)=>{ return state.menuDetailModalState } );
   let checkMenuModalState = useSelector( (state)=>{ return state.checkMenuModalState } );
-  let paymentSelectModalState = useSelector( (state)=>{ return state.paymentSelectModalState } );
-  let cardPayModalState = useSelector( (state)=>{ return state.cardPayModalState } );
   let receiptModalState = useSelector( (state)=>{ return state.receiptModalState } );
   let totalMenuCount = useSelector((state) => state.totalMenuCount);
   let totalPrice = useSelector((state) => state.totalPrice);
@@ -67,18 +65,6 @@ function LowVersionMenuSelect() {
           <md.ModalBackgroundContainer>
             <MenuCheckModal/>
           </md.ModalBackgroundContainer>
-        }
-        {
-          paymentSelectModalState && 
-            <md.ModalBackgroundContainer>
-              <PaymentSelectModal/>
-            </md.ModalBackgroundContainer>
-        }
-        {
-          cardPayModalState && 
-          <md.ModalTopBackgroundContainer>
-            <CardPaymentModal />
-          </md.ModalTopBackgroundContainer>
         }
         {
           receiptModalState && 

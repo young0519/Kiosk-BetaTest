@@ -5,6 +5,16 @@ import { SetMenuDetailModal, SetMenuInfo } from '../../../redux/kioskAction';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
+const imageMapping = {
+  nachoPlater: require("../../../assets/imgs/나쵸플래터.png"),
+  buldak: require("../../../assets/imgs/불닭게티.png"),
+  Premium_buldak: require("../../../assets/imgs/프리미엄_불닭게티.png"),
+  sunrise: require("../../../assets/imgs/선라이즈.png"),
+  cuba: require("../../../assets/imgs/쿠바리브레.png"),
+  po_spark: require("../../../assets/imgs/석류_스파클러.png"),
+  grape_spark: require("../../../assets/imgs/청포도_스파클러.png") // 예시로 같은 이미지를 사용
+};
+
 function MenuItem({ name, price, explain, photoUrl }) {
   const dispatch = useDispatch();
   const [imageSrc, setImageSrc] = useState(gray_color_bg); // 기본 이미지로 초기화
@@ -12,22 +22,9 @@ function MenuItem({ name, price, explain, photoUrl }) {
   const formattedPrice = price.toLocaleString('ko-KR');
 
   useEffect(() => {
-    const fetchImage = async () => {
-      try {
-        const response = await axios.get(`/file/static/${photoUrl}`, {
-          responseType: 'blob' // 이미지 파일로 응답을 받기 위해 responseType 설정
-        });
-
-        const imageUrl = URL.createObjectURL(response.data); // Blob URL 생성
-        setImageSrc(imageUrl); // Blob URL로 이미지 소스 설정
-      } catch (error) {
-        console.error("이미지 로드 실패:", error);
-      }
-    };
-
-    if (photoUrl) {
-      fetchImage();
-    }
+    // photoUrl에 따라 이미지를 설정
+    const imgSrc = imageMapping[photoUrl] || gray_color_bg; // 매핑된 이미지가 없으면 기본 이미지 사용
+    setImageSrc(imgSrc);
   }, [photoUrl]);
 
   const openDetailModal = () => {
