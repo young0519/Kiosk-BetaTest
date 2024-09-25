@@ -50,8 +50,8 @@ export const DetailMenuContainer = styled.div`
     align-items : center;
     justify-content : space-between;
     img {
-      width : 16.2rem;
-      height : 21rem;
+      width : 18rem;
+      height : 23rem;
       margin : 0 3rem 0 0;
     }
     .drink-text {
@@ -566,22 +566,43 @@ export const ReceiptModalContainer = styled.div`
   h1 {
     font-family : 'Pretendard-SemiBold';
     font-size : 3.5rem;
+    line-height : 5rem;
+    margin : 1.5rem 0 3rem 0;
+  }
+  p {
+    font-family : 'Pretendard-SemiBold';
+    font-size : 3rem;
+    line-height : 2rem;
     margin : 1.5rem 0;
+    span {
+      color : ${props => props.theme.colors.blue1};
+    }
   }
   .btnBox {
     margin : 2rem 0 0 0;
     width : 90%;
     display : flex;
+    flex-direction : column;
     align-items : center;
-    justify-content : space-between;
+    justify-content : center;
+    p {
+      font-family : 'Pretendard-SemiBold';
+      font-size : 3rem;
+      line-height : 2rem;
+      margin : 1.5rem 0;
+      span {
+        color : ${props => props.theme.colors.blue1};
+      }
+    }
     button {
-      width : 35rem;
-      height : 15rem;
+      width : 30rem;
+      height : 10rem;
       font-size : 3.8rem;
       font-family : 'Pretendard-SemiBold';
       letter-spacing : 0.15rem;
       border : none;
       border-radius : 1rem;
+      margin-top : 1rem;
       &.print {
         background-color : ${props => props.theme.colors.blue1};
         color : ${props => props.theme.colors.colorBg};

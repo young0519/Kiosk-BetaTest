@@ -3,13 +3,6 @@ import gray_color_bg from '../../../assets/imgs/gray_color_bg.png'
 import * as m from "../../../styles/basic/menuPageBasicStyle"
 import { SetMenuDetailModal, SetMenuInfo } from '../../../redux/kioskAction';
 import { useEffect, useState } from 'react';
-import menuDataList from "../../../assets/menuData.json"
-// import 나쵸플래터 from "../../../assets/imgs/나쵸플래터.png"
-// import 불닭게티 from "../../../assets/imgs/불닭게티.png"
-// import 프리미엄_불닭게티 from "../../../assets/imgs/프리미엄_불닭게티.png"
-// import 쿠바리브레 from "../../../assets/imgs/쿠바리브레.png"
-// import 선라이즈 from "../../../assets/imgs/선라이즈.png"
-// import 스파클러_칵테일 from "../../../assets/imgs/스파클러_칵테일.png"
 
 const imageMapping = {
   nachoPlater: require("../../../assets/imgs/나쵸플래터.png"),

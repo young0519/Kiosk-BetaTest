@@ -1,5 +1,4 @@
 import * as md from "../../../styles/modalStyle";
-import * as m from "../../../styles/basic/menuPageBasicStyle";
 import { useDispatch, useSelector } from "react-redux";
 import { SetReceiptModal, SetTotalMenuModal } from "../../../redux/kioskAction";
 import TotalMenuList from "../totalMenuList";

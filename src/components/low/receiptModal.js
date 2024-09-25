@@ -40,18 +40,15 @@ const ReceiptModal = () => {
 
   return (
     <md.ReceiptModalContainer>
-      <h1>[정상 승인]</h1>
-      <h1>영수증을 출력하시겠습니까?</h1>
-      <h1>{countdown} 초 후 자동 미출력</h1>
+      <h1>[주문 완료]</h1>
+      <p>결제는 <span>영수증 하단 계좌 이체</span>해주세요!</p>
+      <p>주문서를 직원에게 제출해주세요!</p>
       <div className="btnBox">
+      <p><span>{countdown}</span> 초 후 자동 초기화</p>
         <button 
           onClick={ReceiptPrint}
           className="print"
-        >출력</button>
-        <button 
-          onClick={NoReceipt}
-          className="no-print"
-        >미출력</button>
+        > 확인</button>
       </div>
     </md.ReceiptModalContainer>
   )
