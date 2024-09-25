@@ -19,6 +19,8 @@ export const KioskStartContainer = styled.div`
       font-size : 7rem;
       line-height : 11rem;
       text-align: center;
+      margin-top : 5rem;
+      margin-bottom : 5rem;
       span {
         color : ${props => props.theme.colors.blue1};
       }
@@ -37,6 +39,7 @@ export const KioskStartContainer = styled.div`
       font-size : 2.5rem;
       line-height : 5rem;
       text-align: center;
+      margin-top : 5rem;
       span {
         color : ${props => props.theme.colors.blue1};
       }
@@ -50,7 +53,15 @@ export const KioskStartContainer = styled.div`
       border : none;
       border-radius : 3rem;
       cursor : pointer;
-      margin-bottom : 20rem;
+      margin-top : 5rem;
+      margin-bottom : 5rem;
+    }
+    .people-info {
+      color : rgba(0,0,0,0.3);
+      font-size : 1.2rem;
+      line-height : 2rem;
+      text-align: center;
+      border-radius : 2rem;
     }
 `
 export const KioskMainContainer = styled.div`
