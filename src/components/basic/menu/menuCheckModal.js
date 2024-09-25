@@ -2,6 +2,19 @@ import * as md from "../../../styles/modalStyle";
 import { useDispatch, useSelector } from "react-redux";
 import { SetReceiptModal, SetTotalMenuModal } from "../../../redux/kioskAction";
 import TotalMenuList from "../totalMenuList";
+import React, { useRef } from "react";
+import { useReactToPrint } from "react-to-print";
+
+const MyComponent = React.forwardRef((props, ref) => {
+  return (
+    <div ref={ref}>
+      <h1>주문 내역</h1>
+      <p>이 텍스트가 인쇄됩니다.</p>
+      <TotalMenuList /> {/* 필요하면 TotalMenuList도 포함 */}
+      {/* 추가적인 프린트할 내용 */}
+    </div>
+  );
+});
 
 function MenuCheckModal() {
   const dispatch = useDispatch();
@@ -20,6 +33,13 @@ function MenuCheckModal() {
   const generateRandomKey = () => {
     return '주문번호_' + Math.floor(1000 + Math.random() * 9000); // 랜덤 키 생성
   };
+
+  const componentRef = useRef();
+
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
+
   
   const selectHere = () => {
     const randomKey = generateRandomKey(); // 랜덤 키 생성
@@ -45,6 +65,7 @@ function MenuCheckModal() {
     localStorage.setItem(randomKey, JSON.stringify(orderData)); // LocalStorage에 저장
     localStorage.setItem('orderNumber', orderNumber); // 업데이트한 주문 번호 저장
 
+    handlePrint(); // 프린트 실행
     dispatch(SetTotalMenuModal(false));
     dispatch(SetReceiptModal(true));
   }
@@ -72,6 +93,7 @@ function MenuCheckModal() {
     localStorage.setItem(randomKey, JSON.stringify(orderData)); // LocalStorage에 저장
     localStorage.setItem('orderNumber', orderNumber); // 업데이트한 주문 번호 저장
 
+    handlePrint(); // 프린트 실행
     dispatch(SetTotalMenuModal(false));
     dispatch(SetReceiptModal(true));
   }
@@ -120,6 +142,10 @@ function MenuCheckModal() {
             </button>
           </div>
         </md.MenuCheckContainer>
+        {/* 프린트할 컴포넌트 */}
+        <div style={{ display: 'none' }}>
+          <MyComponent ref={componentRef} />
+        </div>
       </div>
     )
   }
