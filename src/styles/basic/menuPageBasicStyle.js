@@ -127,6 +127,7 @@ export const SmallShoppingBag = styled.div`
   border-radius : 1rem;
   background-color : ${props => props.theme.colors.colorBg};
   padding : 1.5rem;
+  overflow : scroll;
 `
 // 장바구니 짧은 ITEM UI
 export const SmallShoppingItem = styled.div`

@@ -17,8 +17,8 @@ const imageMapping = {
   Premium_buldak: require("../../../assets/imgs/프리미엄_불닭게티.png"),
   sunrise: require("../../../assets/imgs/선라이즈.png"),
   cuba: require("../../../assets/imgs/쿠바리브레.png"),
-  // po_spark: require("../../../assets/imgs/스파클러_칵테일.png").default,
-  grape_spark: require("../../../assets/imgs/스파클러_칵테일.png") // 예시로 같은 이미지를 사용
+  po_spark: require("../../../assets/imgs/석류_스파클러.png"),
+  grape_spark: require("../../../assets/imgs/청포도_스파클러.png") // 예시로 같은 이미지를 사용
 };
 
 function MenuItem({ name, price, explain, photoUrl }) {

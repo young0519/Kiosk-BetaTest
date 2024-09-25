@@ -83,12 +83,6 @@ function ScreenSelect() {
       >
         저자세
       </button>
-      <button
-        className={`en ${selectedScreen === 'text' ? 'active' : ''}`}
-        onClick={() => handleScreenClick('text')}
-      >
-        텍스트 강화
-      </button>
     </k.ScreenBox>
   );
 }
